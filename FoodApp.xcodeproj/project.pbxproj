@@ -54,14 +54,46 @@
 		EBBCFE9A2077B9750094CE69 /* FoodApp */ = {
 			isa = PBXGroup;
 			children = (
-				EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */,
-				EBBCFE9D2077B9750094CE69 /* ViewController.swift */,
-				EBBCFE9F2077B9750094CE69 /* Main.storyboard */,
-				EBBCFEA22077B9750094CE69 /* Assets.xcassets */,
-				EBBCFEA42077B9750094CE69 /* LaunchScreen.storyboard */,
-				EBBCFEA72077B9750094CE69 /* Info.plist */,
+				EBBCFEAD2077BCDC0094CE69 /* Controllers */,
+				EBBCFEAE2077BCEF0094CE69 /* Models */,
+				EBBCFEAF2077BCF70094CE69 /* Views */,
+				EBBCFEB02077BDC60094CE69 /* Support Files */,
 			);
 			path = FoodApp;
+			sourceTree = "<group>";
+		};
+		EBBCFEAD2077BCDC0094CE69 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EBBCFE9D2077B9750094CE69 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EBBCFEAE2077BCEF0094CE69 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EBBCFEAF2077BCF70094CE69 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EBBCFEB02077BDC60094CE69 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EBBCFEA22077B9750094CE69 /* Assets.xcassets */,
+				EBBCFE9F2077B9750094CE69 /* Main.storyboard */,
+				EBBCFEA42077B9750094CE69 /* LaunchScreen.storyboard */,
+				EBBCFEA72077B9750094CE69 /* Info.plist */,
+				EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
