@@ -37,15 +37,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9x-lK-69M">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9x-lK-69M">
                                         <rect key="frame" x="345" y="0.0" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="3SA-lF-WZ4"/>
                                             <constraint firstAttribute="height" constant="30" id="fvp-fs-Mu2"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="51"/>
-                                        <state key="normal" title="+">
-                                            <color key="titleColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="+" image="add">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -97,16 +96,36 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCP-wJ-mhX">
+                                <rect key="frame" x="152.5" y="170" width="70.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dho-w5-y9I">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="search" id="eI2-dk-N5R"/>
+                                    <tabBarItem systemItem="favorites" id="gce-s3-qbN"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zKx-UG-qFN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7rr-0G-9fX"/>
                             <constraint firstItem="zKx-UG-qFN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-6" id="9yg-f5-lYz"/>
+                            <constraint firstItem="dho-w5-y9I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R0S-MX-hSG"/>
                             <constraint firstItem="taz-lt-Aba" firstAttribute="centerX" secondItem="zKx-UG-qFN" secondAttribute="centerX" id="Tnb-vN-Dbp"/>
                             <constraint firstItem="taz-lt-Aba" firstAttribute="top" secondItem="zKx-UG-qFN" secondAttribute="bottom" constant="8" id="UEE-BC-GXe"/>
+                            <constraint firstItem="uCP-wJ-mhX" firstAttribute="top" secondItem="3Jd-5K-tDa" secondAttribute="bottom" constant="8" id="VXs-2h-C6J"/>
+                            <constraint firstItem="dho-w5-y9I" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c29-dx-2j4"/>
                             <constraint firstItem="taz-lt-Aba" firstAttribute="top" secondItem="zKx-UG-qFN" secondAttribute="bottom" constant="8" symbolic="YES" id="e0G-Hf-Gx9"/>
+                            <constraint firstItem="dho-w5-y9I" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="j0S-ib-oCa"/>
                             <constraint firstItem="3Jd-5K-tDa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qjR-It-yGk"/>
+                            <constraint firstItem="dho-w5-y9I" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tmE-cJ-FlG"/>
                             <constraint firstItem="3Jd-5K-tDa" firstAttribute="top" secondItem="iCc-uf-f8z" secondAttribute="bottom" constant="8" id="zIJ-T2-Pg5"/>
+                            <constraint firstItem="uCP-wJ-mhX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="znd-V6-Q6K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -116,4 +135,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="512" height="512"/>
+    </resources>
 </document>
