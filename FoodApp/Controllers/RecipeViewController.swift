@@ -38,9 +38,11 @@ class RecipeViewController: UIViewController {
         ingridientsView.dataSource = self.viewModel
         
         // Setup navigation buttons
-        self.saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped(sender:)))
-        self.unsaveButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(unsaveButtonTapped(sender:)))
+        self.saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+        self.unsaveButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(unsaveButtonTapped))
         
+        // Set the default button
+        //TODO Real model
         self.navigationItem.rightBarButtonItem = self.saveButton
     }
     
@@ -49,15 +51,21 @@ class RecipeViewController: UIViewController {
         ingridientsViewHeightConstraint.constant = ingridientsView.contentSize.height
     }
     
-    @objc func saveButtonTapped(sender: UIBarButtonItem) {
+    @objc func saveButtonTapped() {
         //TODO
         print("Saving")
         self.navigationItem.rightBarButtonItem = self.unsaveButton
     }
     
-    @objc func unsaveButtonTapped(sender: UIBarButtonItem) {
+    @objc func unsaveButtonTapped() {
         //TODO
         print("Unsaving")
         self.navigationItem.rightBarButtonItem = self.saveButton
+    }
+    
+    @IBAction func instructionsButtonTapped() {
+        //TODO Real model
+        let url = URL(string: "https://leeds.ac.uk")!
+        UIApplication.shared.open(url, options: [:])
     }
 }
