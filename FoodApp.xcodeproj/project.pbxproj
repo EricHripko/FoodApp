@@ -10,9 +10,9 @@
 		EB4450302084A3A8004C3C82 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB44502F2084A3A8004C3C82 /* Default-568h@2x.png */; };
 		EBBCFE9C2077B9750094CE69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */; };
 		EBBCFE9E2077B9750094CE69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBCFE9D2077B9750094CE69 /* ViewController.swift */; };
-		EBBCFEA12077B9750094CE69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBCFE9F2077B9750094CE69 /* Main.storyboard */; };
 		EBBCFEA32077B9750094CE69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBBCFEA22077B9750094CE69 /* Assets.xcassets */; };
 		EBBCFEA62077B9750094CE69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBCFEA42077B9750094CE69 /* LaunchScreen.storyboard */; };
+		EBEA4A4B20851D5E00E559A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEA4A4920851D5E00E559A8 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +20,10 @@
 		EBBCFE982077B9750094CE69 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBBCFE9D2077B9750094CE69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EBBCFEA02077B9750094CE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBBCFEA22077B9750094CE69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBBCFEA52077B9750094CE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBBCFEA72077B9750094CE69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBEA4A4A20851D5E00E559A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				EBBCFEA22077B9750094CE69 /* Assets.xcassets */,
-				EBBCFE9F2077B9750094CE69 /* Main.storyboard */,
+				EBEA4A4920851D5E00E559A8 /* Main.storyboard */,
 				EBBCFEA42077B9750094CE69 /* LaunchScreen.storyboard */,
 				EBBCFEA72077B9750094CE69 /* Info.plist */,
 				EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */,
@@ -161,7 +161,7 @@
 				EBBCFEA62077B9750094CE69 /* LaunchScreen.storyboard in Resources */,
 				EB4450302084A3A8004C3C82 /* Default-568h@2x.png in Resources */,
 				EBBCFEA32077B9750094CE69 /* Assets.xcassets in Resources */,
-				EBBCFEA12077B9750094CE69 /* Main.storyboard in Resources */,
+				EBEA4A4B20851D5E00E559A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,20 +180,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EBBCFE9F2077B9750094CE69 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EBBCFEA02077B9750094CE69 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EBBCFEA42077B9750094CE69 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EBBCFEA52077B9750094CE69 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EBEA4A4920851D5E00E559A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBEA4A4A20851D5E00E559A8 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
