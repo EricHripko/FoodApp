@@ -47,6 +47,9 @@
                                         <state key="normal" title="+">
                                             <color key="titleColor" red="0.50196078431372548" green="0.792156862745098" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addIngredientButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EI8-Lc-ru8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -179,28 +182,99 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="J6c-sp-Aia" kind="show" identifier="addIngredientSegue" id="dJk-rK-nWR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--Search Ingredient View Controller-->
+        <!--Add Ingredient View Controller-->
         <scene sceneID="iTK-If-ULG">
             <objects>
-                <viewController id="J6c-sp-Aia" customClass="SearchIngredientViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="J6c-sp-Aia" customClass="AddIngredientViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jVK-1x-pWO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="N2n-vr-RBo">
+                                <rect key="frame" x="0.0" y="68" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wu6-VL-XFd">
+                                <rect key="frame" x="86.5" y="15" width="202" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TW4-XB-p3c">
+                                <rect key="frame" x="15" y="25" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RIu-AQ-5FE"/>
+                                    <constraint firstAttribute="width" constant="30" id="a9A-Wn-Ncz"/>
+                                </constraints>
+                                <state key="normal" image="leftArrow"/>
+                                <connections>
+                                    <action selector="backToFindRecipes:" destination="J6c-sp-Aia" eventType="touchUpInside" id="TvH-iK-glI"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B7q-Vx-xvC">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Ingredient" id="8ks-tL-nsA">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ks-tL-nsA" id="tC1-P4-Fbl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ingredientName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecD-Fh-oqu">
+                                                    <rect key="frame" x="15" y="12" width="152" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ecD-Fh-oqu" secondAttribute="trailingMargin" id="2Kl-dH-k5b"/>
+                                                <constraint firstItem="ecD-Fh-oqu" firstAttribute="bottom" secondItem="tC1-P4-Fbl" secondAttribute="bottomMargin" id="AM2-2J-TZY"/>
+                                                <constraint firstItem="ecD-Fh-oqu" firstAttribute="leading" secondItem="tC1-P4-Fbl" secondAttribute="leadingMargin" id="Hq7-qY-vIj"/>
+                                                <constraint firstItem="ecD-Fh-oqu" firstAttribute="centerY" secondItem="tC1-P4-Fbl" secondAttribute="centerY" id="Uxy-T2-1ko"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TW4-XB-p3c" firstAttribute="top" secondItem="jVK-1x-pWO" secondAttribute="top" constant="25" id="2AZ-wG-5BA"/>
+                            <constraint firstItem="N2n-vr-RBo" firstAttribute="top" secondItem="Wu6-VL-XFd" secondAttribute="bottom" constant="14" id="5pc-tj-Z0z"/>
+                            <constraint firstItem="N2n-vr-RBo" firstAttribute="leading" secondItem="L0b-pJ-nkM" secondAttribute="leading" id="8he-xo-dwO"/>
+                            <constraint firstItem="Wu6-VL-XFd" firstAttribute="top" secondItem="jVK-1x-pWO" secondAttribute="top" constant="15" id="F0O-gO-o5I"/>
+                            <constraint firstItem="TW4-XB-p3c" firstAttribute="leading" secondItem="L0b-pJ-nkM" secondAttribute="leading" constant="15" id="MIO-Op-pTt"/>
+                            <constraint firstItem="B7q-Vx-xvC" firstAttribute="bottom" secondItem="L0b-pJ-nkM" secondAttribute="bottom" id="Z7C-AF-b47"/>
+                            <constraint firstItem="N2n-vr-RBo" firstAttribute="trailing" secondItem="L0b-pJ-nkM" secondAttribute="trailing" id="gcY-Fi-a7a"/>
+                            <constraint firstItem="B7q-Vx-xvC" firstAttribute="leading" secondItem="L0b-pJ-nkM" secondAttribute="leading" id="kJN-pz-Uaj"/>
+                            <constraint firstItem="B7q-Vx-xvC" firstAttribute="top" secondItem="N2n-vr-RBo" secondAttribute="bottom" id="pMH-KC-ubJ"/>
+                            <constraint firstItem="B7q-Vx-xvC" firstAttribute="trailing" secondItem="L0b-pJ-nkM" secondAttribute="trailing" id="rOM-Ch-YeV"/>
+                            <constraint firstItem="Wu6-VL-XFd" firstAttribute="centerX" secondItem="L0b-pJ-nkM" secondAttribute="centerX" id="wGN-EX-PIG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="L0b-pJ-nkM"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="returnIngredientSegue" id="sIv-PX-3JL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ux-mJ-Jey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1161" y="132"/>
+            <point key="canvasLocation" x="1160.8" y="131.78410794602701"/>
         </scene>
     </scenes>
     <resources>
+        <image name="leftArrow" width="50" height="50"/>
         <image name="rightArrow" width="12" height="12"/>
     </resources>
 </document>

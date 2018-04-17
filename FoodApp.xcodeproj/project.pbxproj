@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB4450302084A3A8004C3C82 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB44502F2084A3A8004C3C82 /* Default-568h@2x.png */; };
-		EB6D957D2085FAA60024FC43 /* SearchIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D957C2085FAA60024FC43 /* SearchIngredientViewController.swift */; };
+		EB6D957D2085FAA60024FC43 /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D957C2085FAA60024FC43 /* AddIngredientViewController.swift */; };
 		EBBCFE9C2077B9750094CE69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */; };
 		EBBCFE9E2077B9750094CE69 /* FindRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBCFE9D2077B9750094CE69 /* FindRecipeViewController.swift */; };
 		EBBCFEA32077B9750094CE69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBBCFEA22077B9750094CE69 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		EB44502F2084A3A8004C3C82 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		EB6D957C2085FAA60024FC43 /* SearchIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIngredientViewController.swift; sourceTree = "<group>"; };
+		EB6D957C2085FAA60024FC43 /* AddIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
 		EBBCFE982077B9750094CE69 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBBCFE9D2077B9750094CE69 /* FindRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRecipeViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				EBBCFE9D2077B9750094CE69 /* FindRecipeViewController.swift */,
-				EB6D957C2085FAA60024FC43 /* SearchIngredientViewController.swift */,
+				EB6D957C2085FAA60024FC43 /* AddIngredientViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 			files = (
 				EBBCFE9E2077B9750094CE69 /* FindRecipeViewController.swift in Sources */,
 				EBBCFE9C2077B9750094CE69 /* AppDelegate.swift in Sources */,
-				EB6D957D2085FAA60024FC43 /* SearchIngredientViewController.swift in Sources */,
+				EB6D957D2085FAA60024FC43 /* AddIngredientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

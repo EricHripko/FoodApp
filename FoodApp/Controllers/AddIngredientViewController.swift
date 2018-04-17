@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchIngredientViewController: UIViewController {
+class AddIngredientViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,11 @@ class SearchIngredientViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func backToFindRecipes(_ sender: Any) {
+        performSegue(withIdentifier: "returnIngredientSegue", sender: self)
     }
     
 
