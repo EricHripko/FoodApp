@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FindRecipeViewController: UIViewController {
 
+    @IBAction func addIngredientButton(_ sender: Any) {
+        performSegue(withIdentifier: "addIngredientSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
