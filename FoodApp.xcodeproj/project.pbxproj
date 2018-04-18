@@ -76,6 +76,8 @@
 				07233FFD20864C9B00F9B6EF /* IngridientsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		074EBD9C2086AAFC00C75495 /* FoodAppUnitTests */ = {
 			isa = PBXGroup;
 			children = (
