@@ -11,6 +11,8 @@
 		072340002086514800F9B6EF /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07233FFF2086514800F9B6EF /* RecipeViewController.swift */; };
 		074EBD962086A4B500C75495 /* SavedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EBD952086A4B500C75495 /* SavedRecipe.swift */; };
 		074EBD9E2086AAFD00C75495 /* SavedRecipeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EBD9D2086AAFD00C75495 /* SavedRecipeUnitTests.swift */; };
+		074EBDA7208734B400C75495 /* SavedRecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EBDA6208734B400C75495 /* SavedRecipeService.swift */; };
+		074EBDA9208734CD00C75495 /* SavedRecipeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EBDA8208734CD00C75495 /* SavedRecipeServiceProtocol.swift */; };
 		EB6D957D2085FAA60024FC43 /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D957C2085FAA60024FC43 /* AddIngredientViewController.swift */; };
 		EBBCFE9C2077B9750094CE69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */; };
 		EBBCFE9E2077B9750094CE69 /* FindRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBCFE9D2077B9750094CE69 /* FindRecipeViewController.swift */; };
@@ -36,6 +38,8 @@
 		074EBD9B2086AAFC00C75495 /* FoodAppUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodAppUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		074EBD9D2086AAFD00C75495 /* SavedRecipeUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeUnitTests.swift; sourceTree = "<group>"; };
 		074EBD9F2086AAFD00C75495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		074EBDA6208734B400C75495 /* SavedRecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeService.swift; sourceTree = "<group>"; };
+		074EBDA8208734CD00C75495 /* SavedRecipeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeServiceProtocol.swift; sourceTree = "<group>"; };
 		EB6D957C2085FAA60024FC43 /* AddIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
 		EBBCFE982077B9750094CE69 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,15 @@
 			path = FoodAppUnitTests;
 			sourceTree = "<group>";
 		};
+		074EBDA52087349000C75495 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				074EBDA6208734B400C75495 /* SavedRecipeService.swift */,
+				074EBDA8208734CD00C75495 /* SavedRecipeServiceProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		EBBCFE8F2077B9740094CE69 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				07233FFC20864C7400F9B6EF /* ViewModels */,
+				074EBDA52087349000C75495 /* Services */,
 				EBBCFEAD2077BCDC0094CE69 /* Controllers */,
 				EBBCFEAE2077BCEF0094CE69 /* Models */,
 				EBBCFEAF2077BCF70094CE69 /* Views */,
@@ -259,6 +273,8 @@
 			files = (
 				EBBCFE9E2077B9750094CE69 /* FindRecipeViewController.swift in Sources */,
 				07233FFE20864C9B00F9B6EF /* IngridientsViewModel.swift in Sources */,
+				074EBDA7208734B400C75495 /* SavedRecipeService.swift in Sources */,
+				074EBDA9208734CD00C75495 /* SavedRecipeServiceProtocol.swift in Sources */,
 				EBBCFE9C2077B9750094CE69 /* AppDelegate.swift in Sources */,
 				EB6D957D2085FAA60024FC43 /* AddIngredientViewController.swift in Sources */,
 				072340002086514800F9B6EF /* RecipeViewController.swift in Sources */,
