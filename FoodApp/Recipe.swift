@@ -10,20 +10,18 @@ import UIKit
 
 // A simple class to represent a Recipe
 class Recipe {
-    let id: String;
-    let name: String;
-    let smallImageUrl: String;
+    // Hardcode fields for initial testing purposes
+    var id = "Crockpot-Cheesy-Chicken-_-Rice-2132197";
+    var name = "Crockpot Cheesy Chicken & Rice";
+    var smallImageUrl = "https://lh3.googleusercontent.com/Q8n3i7QbQZUqeSggcgEEocDh0_t4ymFsjNq6_LPbNCBDJn_Ppyq50Sg2lHzT8OuGul_qrEWjvddJK4K8XfWR=s90";
     
-    init(rId: String, rName: String, rSmallImageUrl: String) {
+    init() {
+        
+    }
+    
+    init(_ rId: String, _ rName: String, _ rSmallImageUrl: String) {
         id = rId;
         name = rName;
         smallImageUrl = rSmallImageUrl;
-    }
-    
-    // Hardcoded constructor with sample data for testing purposes
-    init() {
-        id = "Crockpot-Cheesy-Chicken-_-Rice-2132197";
-        name = "Crockpot Cheesy Chicken & Rice";
-        smallImageUrl = "https://lh3.googleusercontent.com/Q8n3i7QbQZUqeSggcgEEocDh0_t4ymFsjNq6_LPbNCBDJn_Ppyq50Sg2lHzT8OuGul_qrEWjvddJK4K8XfWR=s90";
     }
 }

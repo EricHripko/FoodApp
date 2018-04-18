@@ -10,31 +10,23 @@ import UIKit
 
 // A simple class to represent a Recipe
 class DetailedRecipe: Recipe {
-    var bigImageUrl: String;
-    var ingredients: [String] = [];
-    var prepTime: String;
-    var cookTime: String;
-    var numberOfServings: String;
+    var bigImageUrl = "https://lh3.googleusercontent.com/Q8n3i7QbQZUqeSggcgEEocDh0_t4ymFsjNq6_LPbNCBDJn_Ppyq50Sg2lHzT8OuGul_qrEWjvddJK4K8XfWR=s360";
+    var ingredients: [String] = ["1 (8oz) box Zatarain's Yellow Rice, cooked according to package.", "4 boneless skinless chicken breasts."];
+    var prepTime = "15 Min";
+    var cookTime = "7 Hr";
+    var numberOfServings = "8";
     
-    // Hardcoded constructor with sample data for testing purposes
     override init() {
-        bigImageUrl = "https://lh3.googleusercontent.com/Q8n3i7QbQZUqeSggcgEEocDh0_t4ymFsjNq6_LPbNCBDJn_Ppyq50Sg2lHzT8OuGul_qrEWjvddJK4K8XfWR=s360";
-        ingredients.append("1 (8oz) box Zatarain's Yellow Rice, cooked according to package.");
-        ingredients.append("4 boneless skinless chicken breasts.");
-        prepTime = "15 Min";
-        cookTime = "7 Hr";
-        numberOfServings = "8";
         super.init();
     }
     
-    // Constructor with all the props
-    init(rBigImageUrl: String, rIngredients: [String], rPrepTime: String, rCookTime: String, rNumberOfServings: String) {
+    init(rId: String, rName: String, rSmallImageUrl: String, rBigImageUrl: String, rIngredients: [String], rPrepTime: String, rCookTime: String, rNumberOfServings: String) {
         bigImageUrl = rBigImageUrl;
         ingredients = rIngredients;
         prepTime = rPrepTime;
         cookTime = rCookTime;
         numberOfServings = rNumberOfServings;
-        super.init();
+        super.init(rId, rName, rSmallImageUrl);
     }
 }
 
