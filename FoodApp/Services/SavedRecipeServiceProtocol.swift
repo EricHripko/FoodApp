@@ -19,7 +19,7 @@ protocol SavedRecipeServiceProtocol {
        - recipe: Recipe details.
      - returns: true if action was successful, false otherwise.
      */
-    func save(recipe: SavedRecipe) -> Bool
+    func save(_ recipe: SavedRecipe) -> Bool
     
     /**
      Remove the recipe from saved.
@@ -28,7 +28,7 @@ protocol SavedRecipeServiceProtocol {
        - id: Unique identifier of the recipe.
      - returns: true if action was successful, false otherwise.
      */
-    func unsave(id: String) -> Bool
+    func unsave(_ id: String) -> Bool
     
     /**
      List all saved recipes.
