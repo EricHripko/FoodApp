@@ -24,6 +24,7 @@ class DetailedRecipe: Recipe {
         prepTime = "15 Min";
         cookTime = "7 Hr";
         numberOfServings = "8";
+        super.init();
     }
     
     // Constructor with all the props
@@ -33,6 +34,7 @@ class DetailedRecipe: Recipe {
         prepTime = rPrepTime;
         cookTime = rCookTime;
         numberOfServings = rNumberOfServings;
+        super.init();
     }
 }
 
