@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+        FoodApp.xcodeproj/project.pbxproj
 		981E656720868C7C00D8ECC5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E656620868C7C00D8ECC5 /* Recipe.swift */; };
 		987305BD20877317003B0F8C /* DetailedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987305BC20877317003B0F8C /* DetailedRecipe.swift */; };
+		07233FFE20864C9B00F9B6EF /* IngridientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07233FFD20864C9B00F9B6EF /* IngridientsViewModel.swift */; };
+		072340002086514800F9B6EF /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07233FFF2086514800F9B6EF /* RecipeViewController.swift */; };
+		074EBD962086A4B500C75495 /* SavedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EBD952086A4B500C75495 /* SavedRecipe.swift */; };
+		074EBD9E2086AAFD00C75495 /* SavedRecipeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EBD9D2086AAFD00C75495 /* SavedRecipeUnitTests.swift */; };
+		074EBDA7208734B400C75495 /* SavedRecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EBDA6208734B400C75495 /* SavedRecipeService.swift */; };
+		074EBDA9208734CD00C75495 /* SavedRecipeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EBDA8208734CD00C75495 /* SavedRecipeServiceProtocol.swift */; };
+		074EBDAB2087395500C75495 /* SavedRecipeServiceUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EBDAA2087395500C75495 /* SavedRecipeServiceUnitTests.swift */; };
+		EB3CE97A2087984D008A7881 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3CE9792087984D008A7881 /* IngredientTableViewCell.swift */; };
+        FoodApp.xcodeproj/project.pbxproj
 		EB6D957D2085FAA60024FC43 /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D957C2085FAA60024FC43 /* AddIngredientViewController.swift */; };
 		EBBCFE9C2077B9750094CE69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */; };
 		EBBCFE9E2077B9750094CE69 /* FindRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBCFE9D2077B9750094CE69 /* FindRecipeViewController.swift */; };
@@ -17,9 +27,31 @@
 		EBEA4A4B20851D5E00E559A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEA4A4920851D5E00E559A8 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		074EBDA02086AAFD00C75495 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBBCFE902077B9740094CE69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBBCFE972077B9740094CE69;
+			remoteInfo = FoodApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+        FoodApp.xcodeproj/project.pbxproj
 		981E656620868C7C00D8ECC5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		987305BC20877317003B0F8C /* DetailedRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRecipe.swift; sourceTree = "<group>"; };
+		07233FFD20864C9B00F9B6EF /* IngridientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsViewModel.swift; sourceTree = "<group>"; };
+		07233FFF2086514800F9B6EF /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		074EBD952086A4B500C75495 /* SavedRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipe.swift; sourceTree = "<group>"; };
+		074EBD9B2086AAFC00C75495 /* FoodAppUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodAppUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		074EBD9D2086AAFD00C75495 /* SavedRecipeUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeUnitTests.swift; sourceTree = "<group>"; };
+		074EBD9F2086AAFD00C75495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		074EBDA6208734B400C75495 /* SavedRecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeService.swift; sourceTree = "<group>"; };
+		074EBDA8208734CD00C75495 /* SavedRecipeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeServiceProtocol.swift; sourceTree = "<group>"; };
+		074EBDAA2087395500C75495 /* SavedRecipeServiceUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeServiceUnitTests.swift; sourceTree = "<group>"; };
+		EB3CE9792087984D008A7881 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+        FoodApp.xcodeproj/project.pbxproj
 		EB6D957C2085FAA60024FC43 /* AddIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
 		EBBCFE982077B9750094CE69 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBCFE9B2077B9750094CE69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		074EBD982086AAFC00C75495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBBCFE952077B9740094CE69 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +80,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07233FFC20864C7400F9B6EF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				07233FFD20864C9B00F9B6EF /* IngridientsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		074EBD9C2086AAFC00C75495 /* FoodAppUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				074EBD9D2086AAFD00C75495 /* SavedRecipeUnitTests.swift */,
+				074EBD9F2086AAFD00C75495 /* Info.plist */,
+				074EBDAA2087395500C75495 /* SavedRecipeServiceUnitTests.swift */,
+			);
+			path = FoodAppUnitTests;
+			sourceTree = "<group>";
+		};
+		074EBDA52087349000C75495 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				074EBDA6208734B400C75495 /* SavedRecipeService.swift */,
+				074EBDA8208734CD00C75495 /* SavedRecipeServiceProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EB3CE9782087983A008A7881 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB3CE9792087984D008A7881 /* IngredientTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EBBCFE8F2077B9740094CE69 = {
 			isa = PBXGroup;
 			children = (
 				EBBCFE9A2077B9750094CE69 /* FoodApp */,
+				074EBD9C2086AAFC00C75495 /* FoodAppUnitTests */,
 				EBBCFE992077B9750094CE69 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				EBBCFE982077B9750094CE69 /* FoodApp.app */,
+				074EBD9B2086AAFC00C75495 /* FoodAppUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,9 +136,11 @@
 		EBBCFE9A2077B9750094CE69 /* FoodApp */ = {
 			isa = PBXGroup;
 			children = (
+				EB3CE9782087983A008A7881 /* Views */,
+				07233FFC20864C7400F9B6EF /* ViewModels */,
+				074EBDA52087349000C75495 /* Services */,
 				EBBCFEAD2077BCDC0094CE69 /* Controllers */,
 				EBBCFEAE2077BCEF0094CE69 /* Models */,
-				EBBCFEAF2077BCF70094CE69 /* Views */,
 				EBBCFEB02077BDC60094CE69 /* Support Files */,
 			);
 			path = FoodApp;
@@ -73,6 +151,7 @@
 			children = (
 				EBBCFE9D2077B9750094CE69 /* FindRecipeViewController.swift */,
 				EB6D957C2085FAA60024FC43 /* AddIngredientViewController.swift */,
+				07233FFF2086514800F9B6EF /* RecipeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -80,17 +159,14 @@
 		EBBCFEAE2077BCEF0094CE69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+        FoodApp.xcodeproj/project.pbxproj
 				981E656620868C7C00D8ECC5 /* Recipe.swift */,
 				987305BC20877317003B0F8C /* DetailedRecipe.swift */,
+
+				074EBD952086A4B500C75495 /* SavedRecipe.swift */,
+        FoodApp.xcodeproj/project.pbxproj
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		EBBCFEAF2077BCF70094CE69 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		EBBCFEB02077BDC60094CE69 /* Support Files */ = {
@@ -108,6 +184,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		074EBD9A2086AAFC00C75495 /* FoodAppUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 074EBDA22086AAFD00C75495 /* Build configuration list for PBXNativeTarget "FoodAppUnitTests" */;
+			buildPhases = (
+				074EBD972086AAFC00C75495 /* Sources */,
+				074EBD982086AAFC00C75495 /* Frameworks */,
+				074EBD992086AAFC00C75495 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				074EBDA12086AAFD00C75495 /* PBXTargetDependency */,
+			);
+			name = FoodAppUnitTests;
+			productName = FoodAppUnitTests;
+			productReference = 074EBD9B2086AAFC00C75495 /* FoodAppUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EBBCFE972077B9740094CE69 /* FoodApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBBCFEAA2077B9750094CE69 /* Build configuration list for PBXNativeTarget "FoodApp" */;
@@ -135,6 +229,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Armadillo;
 				TargetAttributes = {
+					074EBD9A2086AAFC00C75495 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EBBCFE972077B9740094CE69;
+					};
 					EBBCFE972077B9740094CE69 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -155,11 +254,19 @@
 			projectRoot = "";
 			targets = (
 				EBBCFE972077B9740094CE69 /* FoodApp */,
+				074EBD9A2086AAFC00C75495 /* FoodAppUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		074EBD992086AAFC00C75495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBBCFE962077B9740094CE69 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,19 +280,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		074EBD972086AAFC00C75495 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				074EBD9E2086AAFD00C75495 /* SavedRecipeUnitTests.swift in Sources */,
+				074EBDAB2087395500C75495 /* SavedRecipeServiceUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBBCFE942077B9740094CE69 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EBBCFE9E2077B9750094CE69 /* FindRecipeViewController.swift in Sources */,
+        FoodApp.xcodeproj/project.pbxproj
 				987305BD20877317003B0F8C /* DetailedRecipe.swift in Sources */,
 				EBBCFE9C2077B9750094CE69 /* AppDelegate.swift in Sources */,
 				EB6D957D2085FAA60024FC43 /* AddIngredientViewController.swift in Sources */,
 				981E656720868C7C00D8ECC5 /* Recipe.swift in Sources */,
+				07233FFE20864C9B00F9B6EF /* IngridientsViewModel.swift in Sources */,
+				074EBDA7208734B400C75495 /* SavedRecipeService.swift in Sources */,
+				074EBDA9208734CD00C75495 /* SavedRecipeServiceProtocol.swift in Sources */,
+				EBBCFE9C2077B9750094CE69 /* AppDelegate.swift in Sources */,
+				EB6D957D2085FAA60024FC43 /* AddIngredientViewController.swift in Sources */,
+				072340002086514800F9B6EF /* RecipeViewController.swift in Sources */,
+				074EBD962086A4B500C75495 /* SavedRecipe.swift in Sources */,
+				EB3CE97A2087984D008A7881 /* IngredientTableViewCell.swift in Sources */,
+        FoodApp.xcodeproj/project.pbxproj
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		074EBDA12086AAFD00C75495 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBBCFE972077B9740094CE69 /* FoodApp */;
+			targetProxy = 074EBDA02086AAFD00C75495 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EBBCFEA42077B9750094CE69 /* LaunchScreen.storyboard */ = {
@@ -207,6 +341,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		074EBDA32086AAFD00C75495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FoodAppUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Armadillo.FoodAppUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodApp.app/FoodApp";
+			};
+			name = Debug;
+		};
+		074EBDA42086AAFD00C75495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FoodAppUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Armadillo.FoodAppUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodApp.app/FoodApp";
+			};
+			name = Release;
+		};
 		EBBCFEA82077B9750094CE69 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -345,6 +509,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		074EBDA22086AAFD00C75495 /* Build configuration list for PBXNativeTarget "FoodAppUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				074EBDA32086AAFD00C75495 /* Debug */,
+				074EBDA42086AAFD00C75495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EBBCFE932077B9740094CE69 /* Build configuration list for PBXProject "FoodApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
