@@ -31,6 +31,15 @@ protocol SavedRecipeServiceProtocol {
     func unsave(_ id: String) -> Bool
     
     /**
+     Check if recipe is saved.
+     
+     - parameters:
+       - id: Unique identifier of the recipe.
+     - returns: true if recipe is saved, false otherwise.
+     */
+    func isSaved(_ id: String) -> Bool
+
+    /**
      List all saved recipes.
      
      - returns: Array of saved recipes or an empty array if an error occured.

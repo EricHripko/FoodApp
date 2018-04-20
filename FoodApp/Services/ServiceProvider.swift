@@ -14,7 +14,7 @@ struct ServiceProvider {
     /**
      Service for managing saved recipes.
      */
-    static let savedRecipeService: SavedRecipeService = SavedRecipeService()
+    static let savedRecipeService: SavedRecipeServiceProtocol = SavedRecipeService()
     
     // This is a static struct and it should not be initialised
     private init() {

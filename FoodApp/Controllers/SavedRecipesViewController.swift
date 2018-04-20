@@ -22,7 +22,9 @@ class SavedRecipesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.navigationItem.title = "Favorites"
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         // Load recipes and display them
         let recipes = ServiceProvider.savedRecipeService.list()
         self.viewModel = SavedRecipesViewModel(recipes)

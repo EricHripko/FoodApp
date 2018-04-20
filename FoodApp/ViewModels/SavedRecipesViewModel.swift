@@ -17,7 +17,7 @@ class SavedRecipesViewModel : NSObject, UITableViewDataSource {
     /**
      Recipes to be displayed.
      */
-    private let savedRecipes: [SavedRecipe]
+    private var savedRecipes: [SavedRecipe]
     
     /**
      Cache of images.
@@ -34,24 +34,6 @@ class SavedRecipesViewModel : NSObject, UITableViewDataSource {
         self.savedRecipes = savedRecipes;
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // We have data
-        if savedRecipes.count > 0 {
-            tableView.separatorStyle = .singleLine
-            tableView.backgroundView = nil
-            return 1
-        }
-        
-        // No recipes saved
-        let placeholder: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-        placeholder.text = "Saved recipes are added here"
-        placeholder.textColor = UIColor.darkGray
-        placeholder.textAlignment = .center
-        tableView.backgroundView = placeholder
-        tableView.separatorStyle = .none
-        return 0
-    }
-    
     /**
      Identify the currently selected recipe, if any.
      
@@ -65,6 +47,25 @@ class SavedRecipesViewModel : NSObject, UITableViewDataSource {
         }
         
         return savedRecipes[index]
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // We have data
+        if savedRecipes.count > 0 {
+            tableView.separatorStyle = .singleLine
+            tableView.backgroundView = nil
+        }
+        else {
+            // No recipes saved
+            let placeholder: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            placeholder.text = "Saved recipes are added here"
+            placeholder.textColor = UIColor.darkGray
+            placeholder.textAlignment = .center
+            tableView.backgroundView = placeholder
+            tableView.separatorStyle = .none
+        }
+        
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,5 +97,29 @@ class SavedRecipesViewModel : NSObject, UITableViewDataSource {
         }
         
         return cell;
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else {
+            return
+        }
+        
+        // Remove recipe from persistent storage
+        let index = indexPath.row
+        let recipeId = savedRecipes[index].id
+        guard ServiceProvider.savedRecipeService.unsave(recipeId) else {
+            return
+        }
+        
+        // Remove recipe from this view model
+        savedRecipes.remove(at: index)
+        
+        // Remove recipe from the table view
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }
