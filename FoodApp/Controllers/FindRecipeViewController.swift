@@ -30,6 +30,8 @@ class FindRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.navigationItem.title = "Search"
+        let handler = ApiResponseHandler(endpoint: "recipes", ingredients: "chicken+rice")
+        handler?.queryAPI()
     }
     
     // segue AddIngredientViewController -> FindRrecipeViewController
