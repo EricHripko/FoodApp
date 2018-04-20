@@ -31,14 +31,28 @@ class ApiResponseHandler {
         }
     }
     
-    func queryAPI() {
+    func makeRequest() {
+        var objects = [Recipe]()
         guard let urlObj = URL(string: url) else { return }
         URLSession.shared.dataTask(with: urlObj) { (data, response, err) in
             guard let data = data else { return }
             
-            let dataAsString = String(data: data, encoding: .utf8)
-            print(dataAsString)
-        }
-        
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                let map = json as? [String: Any]
+                let matches = map!["matches"] as? [Any]
+                for match in matches! {
+                    let each = match as? [String: Any]
+                    let imageArray = each!["smallImageUrls"] as? [String]
+                    let image = imageArray![0]
+                    let recipeObj = Recipe(id: each!["id"]! as! String, name: each!["recipeName"]! as! String, smallImageURL: image)
+                    objects.append(recipeObj)
+                }
+            }
+            catch let jsonErr {
+                print("Error parsing JSON", jsonErr)
+            }
+            print(objects)
+        }.resume()
     }
 }

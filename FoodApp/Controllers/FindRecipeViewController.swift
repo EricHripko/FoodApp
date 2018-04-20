@@ -31,7 +31,7 @@ class FindRecipeViewController: UIViewController {
         super.viewDidLoad()
         self.tabBarController?.navigationItem.title = "Search"
         let handler = ApiResponseHandler(endpoint: "recipes", ingredients: "chicken+rice")
-        handler?.queryAPI()
+        handler?.makeRequest()
     }
     
     // segue AddIngredientViewController -> FindRrecipeViewController
