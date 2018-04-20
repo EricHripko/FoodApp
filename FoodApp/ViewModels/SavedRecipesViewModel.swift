@@ -34,6 +34,24 @@ class SavedRecipesViewModel : NSObject, UITableViewDataSource {
         self.savedRecipes = savedRecipes;
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // We have data
+        if savedRecipes.count > 0 {
+            tableView.separatorStyle = .singleLine
+            tableView.backgroundView = nil
+            return 1
+        }
+        
+        // No recipes saved
+        let placeholder: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        placeholder.text = "Saved recipes are added here"
+        placeholder.textColor = UIColor.darkGray
+        placeholder.textAlignment = .center
+        tableView.backgroundView = placeholder
+        tableView.separatorStyle = .none
+        return 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.savedRecipes.count;
     }
@@ -42,10 +60,10 @@ class SavedRecipesViewModel : NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellTemplate") as! RecipeTableViewCell
         
         let savedRecipe = savedRecipes[indexPath.row]
-        cell.textView?.text = savedRecipe.name
+        cell.name = savedRecipe.name
         if let image = imageCache[savedRecipe.imageURL] {
             // Pull the image from cache
-            cell.iconView?.image = image
+            cell.icon = image
         }
         else {
             // Download the image
@@ -56,7 +74,7 @@ class SavedRecipesViewModel : NSObject, UITableViewDataSource {
                         let image = UIImage(data: data!)
                         self.imageCache[savedRecipe.imageURL] = image
                         // Set the image and recalculate layout
-                        cell.iconView?.image = image
+                        cell.icon = image
                     }
                 }
             }

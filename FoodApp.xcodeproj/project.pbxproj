@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0722C01A208A501D004C48C7 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0722C019208A501D004C48C7 /* ServiceProvider.swift */; };
 		07233FFE20864C9B00F9B6EF /* IngridientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07233FFD20864C9B00F9B6EF /* IngridientsViewModel.swift */; };
 		072340002086514800F9B6EF /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07233FFF2086514800F9B6EF /* RecipeViewController.swift */; };
 		074EBD9E2086AAFD00C75495 /* SavedRecipeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EBD9D2086AAFD00C75495 /* SavedRecipeUnitTests.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0722C019208A501D004C48C7 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		07233FFD20864C9B00F9B6EF /* IngridientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsViewModel.swift; sourceTree = "<group>"; };
 		07233FFF2086514800F9B6EF /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		074EBD9B2086AAFC00C75495 /* FoodAppUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodAppUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 			children = (
 				074EBDA6208734B400C75495 /* SavedRecipeService.swift */,
 				074EBDA8208734CD00C75495 /* SavedRecipeServiceProtocol.swift */,
+				0722C019208A501D004C48C7 /* ServiceProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				07E079A7208A257800C11761 /* RecipeTableViewCell.swift in Sources */,
 				07E0799F20894D4100C11761 /* SavedRecipesViewController.swift in Sources */,
 				07233FFE20864C9B00F9B6EF /* IngridientsViewModel.swift in Sources */,
+				0722C01A208A501D004C48C7 /* ServiceProvider.swift in Sources */,
 				074EBDA7208734B400C75495 /* SavedRecipeService.swift in Sources */,
 				074EBDA9208734CD00C75495 /* SavedRecipeServiceProtocol.swift in Sources */,
 				072340002086514800F9B6EF /* RecipeViewController.swift in Sources */,
