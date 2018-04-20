@@ -17,6 +17,39 @@ class RecipeTableViewCell : UITableViewCell {
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var textView: UILabel!
     
+    /**
+     Get or set recipe name displayed by this control.
+     */
+    public var name: String? {
+        get {
+            return textView.text
+        }
+        set(value) {
+            textView.text = value
+        }
+    }
+    
+    /**
+     Get or set the image displayed by this control.
+     */
+    public var icon: UIImage? {
+        get {
+            return iconView.image
+        }
+        set(value) {
+            iconView.image = value
+            
+            if value == nil {
+                return
+            }
+            // Animate image
+            iconView.alpha = 0.0
+            UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut) {
+                self.iconView.layer.opacity = 1.0
+            }.startAnimation()
+        }
+    }
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         nibSetup()
