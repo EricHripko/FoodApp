@@ -35,23 +35,52 @@
         <!--Favorites-->
         <scene sceneID="vsY-tE-Jie">
             <objects>
-                <viewController title="Favorites" id="cAA-TH-jPd" sceneMemberID="viewController">
+                <viewController title="Favorites" id="cAA-TH-jPd" customClass="SavedRecipesViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UBe-QH-pGh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ert-2k-mgg" userLabel="Saved Recipes">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="540" id="Ae2-f8-brI"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTemplate" id="p3N-ww-0K1" customClass="RecipeTableViewCell" customModule="FoodApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p3N-ww-0K1" id="eCv-83-XvU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4fO-qV-9zF" firstAttribute="bottom" secondItem="ert-2k-mgg" secondAttribute="bottom" id="H97-Ne-Xb0"/>
+                            <constraint firstItem="4fO-qV-9zF" firstAttribute="trailing" secondItem="ert-2k-mgg" secondAttribute="trailing" priority="750" id="VsT-x0-cVt"/>
+                            <constraint firstItem="ert-2k-mgg" firstAttribute="top" secondItem="4fO-qV-9zF" secondAttribute="top" id="WPH-Wh-ITI"/>
+                            <constraint firstItem="ert-2k-mgg" firstAttribute="leading" secondItem="4fO-qV-9zF" secondAttribute="leading" priority="750" id="WZZ-O9-mE9"/>
+                            <constraint firstItem="ert-2k-mgg" firstAttribute="centerX" secondItem="UBe-QH-pGh" secondAttribute="centerX" id="dgu-t4-Xoa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4fO-qV-9zF"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="FNY-xs-9jd"/>
+                    <connections>
+                        <outlet property="recipesView" destination="ert-2k-mgg" id="IUF-U1-s9X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYk-2w-Lnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-614" y="284"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Food App-->
         <scene sceneID="5Sj-kZ-rWX">
             <objects>
-                <tabBarController id="oKg-Rb-45U" sceneMemberID="viewController">
+                <tabBarController title="Food App" id="oKg-Rb-45U" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="GBP-xZ-hpB"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CME-37-BLG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -97,7 +126,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKy-1n-2LA">
-                                                    <rect key="frame" x="73" y="1" width="27" height="22"/>
+                                                    <rect key="frame" x="73" y="1" width="27" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="27" id="pta-Ca-jtl"/>
                                                     </constraints>
@@ -573,4 +602,7 @@
     <resources>
         <image name="rightArrow" width="12" height="12"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lFG-Ed-0Qu"/>
+    </inferredMetricsTieBreakers>
 </document>

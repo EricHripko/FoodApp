@@ -29,7 +29,7 @@ class FindRecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.tabBarController?.navigationItem.title = "Search"
     }
     
     // segue AddIngredientViewController -> FindRrecipeViewController

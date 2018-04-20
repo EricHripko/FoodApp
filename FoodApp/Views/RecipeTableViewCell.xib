@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecipeTableViewCell" customModule="FoodApp" customModuleProvider="target">
+            <connections>
+                <outlet property="iconView" destination="20U-vg-hgX" id="IfS-nF-wIr"/>
+                <outlet property="textView" destination="EX0-ys-L69" id="ohN-VO-mcs"/>
+                <outlet property="view" destination="iN0-l3-epB" id="tcb-h8-aY7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="469" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="20U-vg-hgX" userLabel="Recipe Image">
+                    <rect key="frame" x="8" y="8" width="48" height="48"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="20U-vg-hgX" secondAttribute="height" multiplier="1:1" id="oxd-a8-k3p"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EX0-ys-L69" userLabel="Recipe Name">
+                    <rect key="frame" x="72" y="21.5" width="389" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EX0-ys-L69" secondAttribute="trailing" constant="8" id="Jfn-uJ-Ufb"/>
+                <constraint firstItem="20U-vg-hgX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="aA8-u7-sYW"/>
+                <constraint firstAttribute="bottom" secondItem="20U-vg-hgX" secondAttribute="bottom" constant="8" id="aVK-x4-9Gv"/>
+                <constraint firstItem="20U-vg-hgX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="b9I-91-FYQ"/>
+                <constraint firstItem="EX0-ys-L69" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cYO-bC-fXs"/>
+                <constraint firstItem="EX0-ys-L69" firstAttribute="leading" secondItem="20U-vg-hgX" secondAttribute="trailing" constant="16" id="jCs-3b-Qdy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="82.5" y="-203"/>
+        </view>
+    </objects>
+</document>
