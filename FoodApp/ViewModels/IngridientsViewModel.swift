@@ -15,7 +15,7 @@ class IngridientsViewModel : NSObject, UITableViewDataSource {
     /**
      Ingridients to be displayed.
      */
-    let ingridients: [String]
+    private let ingridients: [String]
     
     /**
      Create a new view model for displaying ingridients.
