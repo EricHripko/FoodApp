@@ -18,16 +18,22 @@ class RecipeViewController: UIViewController {
     /**
      View model for the igridients list.
      */
-    var viewModel: IngridientsViewModel!
+    private var viewModel: IngridientsViewModel!
     
     /**
      Button for saving a recipe.
      */
-    var saveButton: UIBarButtonItem!
+    private var saveButton: UIBarButtonItem!
+    
     /**
      Button for removing a recipe from saved.
      */
-    var unsaveButton: UIBarButtonItem!
+    private var unsaveButton: UIBarButtonItem!
+    
+    /**
+     Identifier for the recipe to be displayed.
+     */
+    public var recipeId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +50,12 @@ class RecipeViewController: UIViewController {
         // Set the default button
         //TODO Real model
         self.navigationItem.rightBarButtonItem = self.saveButton
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        print("Display recipe id: \(recipeId ?? "None")")
     }
     
     override func viewDidLayoutSubviews() {

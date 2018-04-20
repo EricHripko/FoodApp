@@ -54,6 +54,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ho2-NZ-PyX" kind="show" identifier="savedRecipeDetail" id="hhK-9C-9Pf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -602,4 +605,7 @@
     <resources>
         <image name="rightArrow" width="12" height="12"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hhK-9C-9Pf"/>
+    </inferredMetricsTieBreakers>
 </document>

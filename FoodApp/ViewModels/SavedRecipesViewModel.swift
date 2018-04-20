@@ -52,6 +52,21 @@ class SavedRecipesViewModel : NSObject, UITableViewDataSource {
         return 0
     }
     
+    /**
+     Identify the currently selected recipe, if any.
+     
+     - parameters:
+       - tableView: Source table view.
+     - returns: Selected recipe or nil otherwise.
+     */
+    func selectedRecipe(for tableView: UITableView) -> SavedRecipe? {
+        guard let index = tableView.indexPathForSelectedRow?.row else {
+            return nil
+        }
+        
+        return savedRecipes[index]
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.savedRecipes.count;
     }

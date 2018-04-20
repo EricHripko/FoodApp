@@ -28,4 +28,14 @@ class SavedRecipesViewController: UIViewController {
         self.viewModel = SavedRecipesViewModel(recipes)
         recipesView.dataSource = self.viewModel
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "savedRecipeDetail" {
+            return
+        }
+        
+        let destination = segue.destination as? RecipeViewController
+        let recipeId = viewModel.selectedRecipe(for: recipesView)
+        destination?.recipeId = recipeId?.id
+    }
 }
