@@ -171,47 +171,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PPI-5V-QmR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PPI-5V-QmR">
                                 <rect key="frame" x="0.0" y="188" width="375" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeResult" id="wvU-pH-qiC">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="XBv-be-D79" customClass="RecipeTableViewCell" customModule="FoodApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wvU-pH-qiC" id="paV-by-HcH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XBv-be-D79" id="Wa7-pa-eqD">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PRb-Z5-ORa">
-                                                    <rect key="frame" x="-1" y="-23" width="50" height="90"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="aj6-bb-M83"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RecipeName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwD-Pb-97l">
-                                                    <rect key="frame" x="57" y="12" width="250" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="dgo-RE-14D"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqU-K2-8zh">
-                                                    <rect key="frame" x="348" y="11" width="12" height="22"/>
-                                                    <state key="normal" image="rightArrow"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="lqU-K2-8zh" firstAttribute="centerY" secondItem="paV-by-HcH" secondAttribute="centerY" id="2Ts-Nf-sDF"/>
-                                                <constraint firstItem="IwD-Pb-97l" firstAttribute="leading" secondItem="PRb-Z5-ORa" secondAttribute="trailing" constant="8" symbolic="YES" id="5Yl-Oe-mt0"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IwD-Pb-97l" secondAttribute="trailing" constant="20" symbolic="YES" id="5gq-8a-yKE"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="lqU-K2-8zh" secondAttribute="trailing" id="8J5-mI-Ff7"/>
-                                                <constraint firstItem="IwD-Pb-97l" firstAttribute="bottom" secondItem="lqU-K2-8zh" secondAttribute="bottom" id="IVO-Or-xiC"/>
-                                                <constraint firstItem="PRb-Z5-ORa" firstAttribute="leading" secondItem="paV-by-HcH" secondAttribute="leadingMargin" constant="-16" id="KpD-TP-38j"/>
-                                                <constraint firstItem="PRb-Z5-ORa" firstAttribute="centerY" secondItem="IwD-Pb-97l" secondAttribute="centerY" id="WYM-ev-eV4"/>
-                                                <constraint firstItem="PRb-Z5-ORa" firstAttribute="top" secondItem="paV-by-HcH" secondAttribute="topMargin" constant="-34" id="hwr-5p-eYp"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -602,9 +571,6 @@
             <point key="canvasLocation" x="839" y="1070"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="rightArrow" width="12" height="12"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hhK-9C-9Pf"/>
     </inferredMetricsTieBreakers>
