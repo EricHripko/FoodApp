@@ -13,8 +13,10 @@ class AddIngredientViewController: UIViewController,UITableViewDelegate,UITableV
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
     var ingredients = [String]()
     var filteredIngredients = [String]()
+    
     var ingredientPassed : String?
     var isSearching = false
     
@@ -34,19 +36,13 @@ class AddIngredientViewController: UIViewController,UITableViewDelegate,UITableV
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func setIngredient(_ sender: UIButton) {
-        //print(sender.titleLabel?.text as Any)
-        if let text = sender.titleLabel?.text {
-            ingredientPassed = text
-            print (text)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "passIngredientSegue" {
+            let vc = segue.destination as! FindRecipeViewController
+            vc.selectedIngredients.append((sender as! UIButton).titleLabel!.text!)
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
@@ -93,12 +89,6 @@ class AddIngredientViewController: UIViewController,UITableViewDelegate,UITableV
         
     }
 
-    
-    
-//    @IBAction func backToFindRecipes(_ sender: Any) {
-//        performSegue(withIdentifier: "returnIngredientSegue", sender: self)
-//    }
-//
 
     /*
     // MARK: - Navigation

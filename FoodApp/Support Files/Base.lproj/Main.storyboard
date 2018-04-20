@@ -76,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="taz-lt-Aba">
-                                <rect key="frame" x="0.0" y="28" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCc-uf-f8z">
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
@@ -106,7 +106,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Jd-5K-tDa">
-                                <rect key="frame" x="0.0" y="66" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="FdP-LB-bTf"/>
@@ -158,13 +158,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCP-wJ-mhX">
-                                <rect key="frame" x="152.5" y="124" width="70.5" height="26.5"/>
+                                <rect key="frame" x="152.5" y="168" width="70.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PPI-5V-QmR">
-                                <rect key="frame" x="0.0" y="158.5" width="375" height="508.5"/>
+                                <rect key="frame" x="0.0" y="202.5" width="375" height="415.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeResult" id="wvU-pH-qiC">
@@ -234,7 +234,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiD-n6-HiJ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lOk-mp-iru">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
@@ -494,8 +494,7 @@
                                                             <rect key="frame" x="0.0" y="5" width="375" height="20"/>
                                                             <state key="normal" title="Button"/>
                                                             <connections>
-                                                                <action selector="setIngredient:" destination="J6c-sp-Aia" eventType="touchUpInside" id="Z8u-fe-GqM"/>
-                                                                <segue destination="erM-wI-5vq" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="7s8-b1-eCu"/>
+                                                                <segue destination="erM-wI-5vq" kind="unwind" identifier="passIngredientSegue" unwindAction="unwindToThisViewWithSender:" id="7s8-b1-eCu"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -538,7 +537,6 @@
                     <connections>
                         <outlet property="searchBar" destination="N2n-vr-RBo" id="mU1-TB-RwE"/>
                         <outlet property="tableView" destination="E6t-o6-aUq" id="7Ft-bA-5Lw"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="returnIngredientSegue" id="sIv-PX-3JL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ux-mJ-Jey" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -550,7 +548,4 @@
     <resources>
         <image name="rightArrow" width="12" height="12"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="sIv-PX-3JL"/>
-    </inferredMetricsTieBreakers>
 </document>
