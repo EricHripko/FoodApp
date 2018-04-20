@@ -27,7 +27,7 @@ class SavedRecipesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         // Load recipes and display them
         let recipes = ServiceProvider.savedRecipeService.list()
-        self.viewModel = SavedRecipesViewModel(recipes)
+        self.viewModel = SavedRecipesViewModel(with: recipes)
         recipesView.dataSource = self.viewModel
     }
     
