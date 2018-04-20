@@ -30,8 +30,14 @@ class FindRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.navigationItem.title = "Search"
-        let handler = ApiResponseHandler(endpoint: "recipes", ingredients: "chicken+rice")
-        handler?.makeRequest()
+//        let handler = ApiResponseHandler(endpoint: "recipes", ingredients: "chicken+rice")
+//        handler?.getRecipes { (recipesArray) in
+//            // recipesArray now contains the array of objects to be rendered on the view
+//        }
+        let handler = ApiResponseHandler(endpoint: "recipe", ingredients: "")
+        handler?.getRecipe { (recipe) in
+            print(recipe)
+        }
     }
     
     // segue AddIngredientViewController -> FindRrecipeViewController

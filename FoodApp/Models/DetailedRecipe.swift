@@ -14,10 +14,10 @@ class DetailedRecipe: Recipe {
     let ingredients: [String];
     let prepTime: String;
     let cookTime: String;
-    let numberOfServings: String;
+    let numberOfServings: Int;
     
     
-    init(id: String, name: String, smallImageURL: String, bigImageURL: String, ingredients: [String], prepTime: String, cookTime: String, numberOfServings: String) {
+    init(id: String, name: String, smallImageURL: String, bigImageURL: String, ingredients: [String], prepTime: String, cookTime: String, numberOfServings: Int) {
         self.bigImageURL = bigImageURL;
         self.ingredients = ingredients;
         self.prepTime = prepTime;
