@@ -14,6 +14,12 @@ class FindRecipeViewController: UIViewController {
         performSegue(withIdentifier: "addIngredientSegue", sender: self)
     }
     
+    var ingredientRecieved: String? {
+        willSet{
+            print("Got it!")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,6 +28,13 @@ class FindRecipeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // segue ViewControllerB -> ViewController
+    @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? AddIngredientViewController {
+            ingredientRecieved = sourceViewController.ingredientPassed
+        }
     }
 
 

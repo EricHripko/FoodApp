@@ -7,11 +7,21 @@
 		<key>FoodApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>FoodAppUnitTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>074EBD9A2086AAFC00C75495</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EBBCFE972077B9740094CE69</key>
 		<dict>
 			<key>primary</key>
