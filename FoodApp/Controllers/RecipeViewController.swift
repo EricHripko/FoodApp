@@ -14,6 +14,11 @@ import UIKit
 class RecipeViewController: UIViewController {
     @IBOutlet weak var ingridientsView: UITableView!
     @IBOutlet weak var ingridientsViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var prepTextView: UILabel!
+    @IBOutlet weak var cookTextView: UILabel!
+    @IBOutlet weak var servesTextView: UILabel!
     
     /**
      View model for the igridients list.
@@ -35,13 +40,78 @@ class RecipeViewController: UIViewController {
      */
     public var recipeId: String?
     
+    /**
+     URL for the image that describes this recipe.
+     */
+    private var imageURL: String?
+    
+    /**
+     Get or set the name of the recipe displayed by this control.
+     */
+    private var name: String? {
+        get {
+            return navigationItem.title
+        }
+        set(value) {
+            navigationItem.title = value
+        }
+    }
+    
+    /**
+     Get or set the image displayed by this control.
+     */
+    private var image: UIImage? {
+        get {
+            return imageView.image
+        }
+        set(value) {
+            imageView.image = value
+            
+            if value == nil {
+                return
+            }
+            // Animate image
+            imageView.alpha = 0.0
+            UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut) {
+                self.imageView.layer.opacity = 1.0
+                }.startAnimation()
+        }
+    }
+    
+    /**
+     Perform data binding for this view and the given model.
+     
+     - parameters:
+       - recipe: Recipe to be displayed.
+     */
+    func dataBind(with recipe: DetailedRecipe) {
+        // Download and display the image
+        imageURL = recipe.imageURL
+        if let url = URL(string: recipe.imageURL) {
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data!)
+                    self.image = image
+                }
+            }
+        }
+        
+        // Display ingridients
+        viewModel = IngridientsViewModel(recipe.ingredients)
+        ingridientsView.dataSource = viewModel
+        ingridientsView.setNeedsLayout()
+        
+        // Display the rest
+        name = recipe.name
+        prepTextView.text = recipe.prepTime
+        cookTextView.text = recipe.cookTime
+        servesTextView.text = "\(recipe.numberOfServings) adults"
+    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set the the view model (mock for now)
-        //TODO Real model
-        viewModel = IngridientsViewModel(["###g ingridient, cut into thin slices"])
-        ingridientsView.dataSource = viewModel
         
         // Setup navigation buttons
         saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
@@ -52,9 +122,21 @@ class RecipeViewController: UIViewController {
         super.viewWillAppear(animated);
         
         print("Display recipe id: \(recipeId ?? "None")")
-        
+
         // Set the default button
         navigationItem.rightBarButtonItem = recipeId != nil && ServiceProvider.savedRecipeService.isSaved(recipeId!) ? unsaveButton : saveButton
+        
+        guard recipeId != nil else {
+            return
+        }
+        
+        activityIndicatorView.startAnimating()
+        ServiceProvider.apiService.getRecipe(id: recipeId!) {
+            recipe in DispatchQueue.main.async {
+                self.dataBind(with: recipe)
+                self.activityIndicatorView.stopAnimating()
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -63,11 +145,11 @@ class RecipeViewController: UIViewController {
     }
     
     @objc func saveButtonTapped() {
-        guard recipeId != nil else {
+        guard recipeId != nil && name != nil && imageURL != nil else {
             return
         }
         
-        let recipe = SavedRecipe(id: recipeId!, name: recipeId!, imageURL: "https://be35832fa5168a30acd6-5c7e0f2623ae37b4a933167fe83d71b5.ssl.cf3.rackcdn.com/4554/pea-and-ham-risotto__hero.jpg?1505386765")!
+        let recipe = SavedRecipe(id: recipeId!, name: name!, imageURL: imageURL!)!
         if ServiceProvider.savedRecipeService.save(recipe) {
             navigationItem.rightBarButtonItem = unsaveButton
         }
