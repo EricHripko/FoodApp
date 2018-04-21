@@ -6,62 +6,43 @@
 //  Copyright © 2018 Armadillo. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 /**
- View model for displaying a list of recipes.
+ View model for displaying a list of saved recipes.
+ Enables user to delete saved recipes.
  */
-class SavedRecipesViewModel : NSObject, UITableViewDataSource {
-    /**
-     Recipes to be displayed.
-     */
-    private let savedRecipes: [SavedRecipe]
-    
-    /**
-     Cache of images.
-     */
-    private var imageCache = [String: UIImage]()
-    
+class SavedRecipesViewModel : RecipesViewModel {
     /**
      Create a new view model for displaying recipes.
      
      - parameters:
        - savedRecipes: Recipes saved by the user.
      */
-    init(_ savedRecipes: [SavedRecipe]) {
-        self.savedRecipes = savedRecipes;
+    init(with savedRecipes: [SavedRecipe]) {
+        super.init(with: savedRecipes, noData: "Saved recipes are added here")
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.savedRecipes.count;
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellTemplate") as! RecipeTableViewCell
-        
-        let savedRecipe = savedRecipes[indexPath.row]
-        cell.textView?.text = savedRecipe.name
-        if let image = imageCache[savedRecipe.imageURL] {
-            // Pull the image from cache
-            cell.iconView?.image = image
-        }
-        else {
-            // Download the image
-            if let url = URL(string: savedRecipe.imageURL) {
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url)
-                    DispatchQueue.main.async {
-                        let image = UIImage(data: data!)
-                        self.imageCache[savedRecipe.imageURL] = image
-                        // Set the image and recalculate layout
-                        cell.iconView?.image = image
-                    }
-                }
-            }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else {
+            return
         }
         
-        return cell;
+        // Remove recipe from persistent storage
+        let index = indexPath.row
+        let recipeId = recipes[index].id
+        guard ServiceProvider.savedRecipeService.unsave(recipeId) else {
+            return
+        }
+        
+        // Remove recipe from this view model
+        recipes.remove(at: index)
+        
+        // Remove recipe from the table view
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }

@@ -11,21 +11,10 @@ import UIKit
 /**
  Saved recipe that can be persisted on the file system.
  */
-class SavedRecipe: NSObject, NSCoding {
-    /**
-     Unique identifier for the recipe.
-     */
-    var id: String
-    
-    /**
-     Name of the recipe.
-     */
-    var name: String
-    
-    /**
-     Image for the recipe.
-     */
-    var imageURL: String
+class SavedRecipe: NSObject, NSCoding, RecipeProtocol {
+    let id: String
+    let name: String
+    let imageURL: String
     
     /**
      Create a new saved recipe.

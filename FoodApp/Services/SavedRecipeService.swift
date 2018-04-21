@@ -71,6 +71,10 @@ internal class SavedRecipeService : SavedRecipeServiceProtocol {
         return persist()
     }
     
+    func isSaved(_ id: String) -> Bool {
+        return recipes.contains { $0.id == id }
+    }
+    
     func list() -> [SavedRecipe] {
         return recipes
     }

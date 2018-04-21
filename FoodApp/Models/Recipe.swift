@@ -12,8 +12,14 @@ import UIKit
 class Recipe: CustomStringConvertible {
     let id: String;
     let name: String;
-    let smallImageURL: String
+    var imageURL: String {
+        get {
+            return smallImageURL
+        }
+    }
     
+    let smallImageURL: String
+
     init(id: String, name: String, smallImageURL: String) {
         self.id = id;
         self.name = name;

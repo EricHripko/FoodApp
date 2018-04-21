@@ -18,19 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FoodApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ND-ZX-r7N">
-                                <rect key="frame" x="104" y="297" width="166" height="72"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tabBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IG4-0z-xGM">
+                                <rect key="frame" x="1" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem systemItem="search" id="HL8-r3-Z0E">
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="999"/>
+                                    </tabBarItem>
+                                    <tabBarItem systemItem="favorites" id="X77-Vr-eh4">
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="999"/>
+                                    </tabBarItem>
+                                </items>
+                            </tabBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEU-cG-WDN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="Ny9-k8-wzU"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1ND-ZX-r7N" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="351-7N-wcR"/>
-                            <constraint firstItem="1ND-ZX-r7N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="104" id="Crd-5A-dQ9"/>
-                            <constraint firstItem="1ND-ZX-r7N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="277" id="dvl-gP-sAv"/>
-                            <constraint firstItem="1ND-ZX-r7N" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lpv-nQ-Fet"/>
+                            <constraint firstItem="IG4-0z-xGM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3He-te-FQW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IG4-0z-xGM" secondAttribute="bottom" id="Loe-t1-LPj"/>
+                            <constraint firstItem="lEU-cG-WDN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Pgl-So-DkI"/>
+                            <constraint firstAttribute="trailing" secondItem="lEU-cG-WDN" secondAttribute="trailing" id="PrC-mI-UWX"/>
+                            <constraint firstItem="IG4-0z-xGM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kKj-23-4DY"/>
+                            <constraint firstItem="lEU-cG-WDN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pga-9t-dNb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

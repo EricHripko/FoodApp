@@ -18,32 +18,43 @@ class RecipeViewController: UIViewController {
     /**
      View model for the igridients list.
      */
-    var viewModel: IngridientsViewModel!
+    private var viewModel: IngridientsViewModel!
     
     /**
      Button for saving a recipe.
      */
-    var saveButton: UIBarButtonItem!
+    private var saveButton: UIBarButtonItem!
+    
     /**
      Button for removing a recipe from saved.
      */
-    var unsaveButton: UIBarButtonItem!
+    private var unsaveButton: UIBarButtonItem!
+    
+    /**
+     Identifier for the recipe to be displayed.
+     */
+    public var recipeId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the the view model (mock for now)
         //TODO Real model
-        self.viewModel = IngridientsViewModel(["###g ingridient, cut into thin slices"])
-        ingridientsView.dataSource = self.viewModel
+        viewModel = IngridientsViewModel(["###g ingridient, cut into thin slices"])
+        ingridientsView.dataSource = viewModel
         
         // Setup navigation buttons
-        self.saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
-        self.unsaveButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(unsaveButtonTapped))
+        saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+        unsaveButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(unsaveButtonTapped))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        print("Display recipe id: \(recipeId ?? "None")")
         
         // Set the default button
-        //TODO Real model
-        self.navigationItem.rightBarButtonItem = self.saveButton
+        navigationItem.rightBarButtonItem = recipeId != nil && ServiceProvider.savedRecipeService.isSaved(recipeId!) ? unsaveButton : saveButton
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,15 +63,24 @@ class RecipeViewController: UIViewController {
     }
     
     @objc func saveButtonTapped() {
-        //TODO
-        print("Saving")
-        self.navigationItem.rightBarButtonItem = self.unsaveButton
+        guard recipeId != nil else {
+            return
+        }
+        
+        let recipe = SavedRecipe(id: recipeId!, name: recipeId!, imageURL: "https://be35832fa5168a30acd6-5c7e0f2623ae37b4a933167fe83d71b5.ssl.cf3.rackcdn.com/4554/pea-and-ham-risotto__hero.jpg?1505386765")!
+        if ServiceProvider.savedRecipeService.save(recipe) {
+            navigationItem.rightBarButtonItem = unsaveButton
+        }
     }
     
     @objc func unsaveButtonTapped() {
-        //TODO
-        print("Unsaving")
-        self.navigationItem.rightBarButtonItem = self.saveButton
+        guard recipeId != nil else {
+            return
+        }
+
+        if ServiceProvider.savedRecipeService.unsave(recipeId!) {
+            navigationItem.rightBarButtonItem = saveButton
+        }
     }
     
     @IBAction func instructionsButtonTapped() {
