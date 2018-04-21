@@ -25,6 +25,8 @@
 		07E0799F20894D4100C11761 /* SavedRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E0799E20894D4100C11761 /* SavedRecipesViewController.swift */; };
 		07E079A7208A257800C11761 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E079A6208A257800C11761 /* RecipeTableViewCell.swift */; };
 		07E079A9208A332000C11761 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E079A8208A331F00C11761 /* RecipeTableViewCell.xib */; };
+		984220B2208B801F00BBB5C5 /* ApiResponseHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984220B1208B801F00BBB5C5 /* ApiResponseHandlerTests.swift */; };
+		9850E6C1208A491400E455BD /* ApiResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9850E6C0208A491400E455BD /* ApiResponseHandler.swift */; };
 		EB3CE97A2087984D008A7881 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3CE9792087984D008A7881 /* IngredientTableViewCell.swift */; };
 		EBBCFE9E2077B9750094CE69 /* FindRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBCFE9D2077B9750094CE69 /* FindRecipeViewController.swift */; };
 		EBBCFEA32077B9750094CE69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBBCFEA22077B9750094CE69 /* Assets.xcassets */; };
@@ -34,6 +36,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		074EBDA02086AAFD00C75495 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBBCFE902077B9740094CE69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBBCFE972077B9740094CE69;
+			remoteInfo = FoodApp;
+		};
+		984220BC208B839100BBB5C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EBBCFE902077B9740094CE69 /* Project object */;
 			proxyType = 1;
@@ -63,6 +72,9 @@
 		07E0799E20894D4100C11761 /* SavedRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipesViewController.swift; sourceTree = "<group>"; };
 		07E079A6208A257800C11761 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		07E079A8208A331F00C11761 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
+		984220B1208B801F00BBB5C5 /* ApiResponseHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseHandlerTests.swift; sourceTree = "<group>"; };
+		984220B7208B839100BBB5C5 /* FoodAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9850E6C0208A491400E455BD /* ApiResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseHandler.swift; sourceTree = "<group>"; };
 		EB3CE9792087984D008A7881 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		EBBCFE982077B9750094CE69 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBCFE9D2077B9750094CE69 /* FindRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRecipeViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +86,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		074EBD982086AAFC00C75495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		984220B4208B839100BBB5C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -104,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				074EBD9D2086AAFD00C75495 /* SavedRecipeUnitTests.swift */,
+				984220B1208B801F00BBB5C5 /* ApiResponseHandlerTests.swift */,
 				074EBD9F2086AAFD00C75495 /* Info.plist */,
 				074EBDAA2087395500C75495 /* SavedRecipeServiceUnitTests.swift */,
 			);
@@ -125,6 +145,7 @@
 			children = (
 				07E0799420893B5300C11761 /* DetailedRecipe.swift */,
 				07E0799220893B5300C11761 /* Recipe.swift */,
+				9850E6C0208A491400E455BD /* ApiResponseHandler.swift */,
 				07E0799320893B5300C11761 /* SavedRecipe.swift */,
 				074E7CDF208A9F2A00F7282F /* RecipeProtocol.swift */,
 			);
@@ -155,6 +176,7 @@
 			children = (
 				EBBCFE982077B9750094CE69 /* FoodApp.app */,
 				074EBD9B2086AAFC00C75495 /* FoodAppUnitTests.xctest */,
+				984220B7208B839100BBB5C5 /* FoodAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +238,24 @@
 			productReference = 074EBD9B2086AAFC00C75495 /* FoodAppUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		984220B6208B839100BBB5C5 /* FoodAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 984220BE208B839100BBB5C5 /* Build configuration list for PBXNativeTarget "FoodAppTests" */;
+			buildPhases = (
+				984220B3208B839100BBB5C5 /* Sources */,
+				984220B4208B839100BBB5C5 /* Frameworks */,
+				984220B5208B839100BBB5C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				984220BD208B839100BBB5C5 /* PBXTargetDependency */,
+			);
+			name = FoodAppTests;
+			productName = FoodAppTests;
+			productReference = 984220B7208B839100BBB5C5 /* FoodAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EBBCFE972077B9740094CE69 /* FoodApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBBCFEAA2077B9750094CE69 /* Build configuration list for PBXNativeTarget "FoodApp" */;
@@ -248,6 +288,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = EBBCFE972077B9740094CE69;
 					};
+					984220B6208B839100BBB5C5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EBBCFE972077B9740094CE69;
+					};
 					EBBCFE972077B9740094CE69 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -269,12 +314,20 @@
 			targets = (
 				EBBCFE972077B9740094CE69 /* FoodApp */,
 				074EBD9A2086AAFC00C75495 /* FoodAppUnitTests */,
+				984220B6208B839100BBB5C5 /* FoodAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		074EBD992086AAFC00C75495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		984220B5208B839100BBB5C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -299,8 +352,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				984220B2208B801F00BBB5C5 /* ApiResponseHandlerTests.swift in Sources */,
 				074EBD9E2086AAFD00C75495 /* SavedRecipeUnitTests.swift in Sources */,
 				074EBDAB2087395500C75495 /* SavedRecipeServiceUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		984220B3208B839100BBB5C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +381,7 @@
 				074E7CE2208AA0CB00F7282F /* RecipesViewModel.swift in Sources */,
 				074E7CE0208A9F2A00F7282F /* RecipeProtocol.swift in Sources */,
 				072340002086514800F9B6EF /* RecipeViewController.swift in Sources */,
+				9850E6C1208A491400E455BD /* ApiResponseHandler.swift in Sources */,
 				EB3CE97A2087984D008A7881 /* IngredientTableViewCell.swift in Sources */,
 				07E0799D20894B3400C11761 /* SavedRecipesViewModel.swift in Sources */,
 				07E0799520893B5300C11761 /* Recipe.swift in Sources */,
@@ -335,6 +397,11 @@
 			isa = PBXTargetDependency;
 			target = EBBCFE972077B9740094CE69 /* FoodApp */;
 			targetProxy = 074EBDA02086AAFD00C75495 /* PBXContainerItemProxy */;
+		};
+		984220BD208B839100BBB5C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBBCFE972077B9740094CE69 /* FoodApp */;
+			targetProxy = 984220BC208B839100BBB5C5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -381,6 +448,36 @@
 				INFOPLIST_FILE = FoodAppUnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Armadillo.FoodAppUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodApp.app/FoodApp";
+			};
+			name = Release;
+		};
+		984220BF208B839100BBB5C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FoodAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sc14bmb.FoodAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodApp.app/FoodApp";
+			};
+			name = Debug;
+		};
+		984220C0208B839100BBB5C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FoodAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sc14bmb.FoodAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,6 +628,15 @@
 			buildConfigurations = (
 				074EBDA32086AAFD00C75495 /* Debug */,
 				074EBDA42086AAFD00C75495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		984220BE208B839100BBB5C5 /* Build configuration list for PBXNativeTarget "FoodAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				984220BF208B839100BBB5C5 /* Debug */,
+				984220C0208B839100BBB5C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

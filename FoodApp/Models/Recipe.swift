@@ -11,9 +11,9 @@ import UIKit
 /**
  A simple class to represent a recipe.
  */
-class Recipe : RecipeProtocol {
-    let id: String;
-    let name: String;
+class Recipe : CustomStringConvertible, RecipeProtocol {
+    let id: String
+    let name: String
     var imageURL: String {
         get {
             return smallImageURL
@@ -26,5 +26,9 @@ class Recipe : RecipeProtocol {
         self.id = id;
         self.name = name;
         self.smallImageURL = smallImageURL;
+    }
+    
+    var description: String {
+        return "Name = \(self.name), ID = \(self.id), URL = \(smallImageURL)"
     }
 }
