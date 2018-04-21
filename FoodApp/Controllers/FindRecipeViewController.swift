@@ -9,17 +9,19 @@
 import UIKit
 
 class FindRecipeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBAction func addIngredientButton(_ sender: Any) {
+        performSegue(withIdentifier: "addIngredientSegue", sender: self)
+    }
+    
+    /**
+     selectedIngredients array, which updates the collection view every time it's set
+     */
     var selectedIngredients: [String] = [] {
         didSet{
             collectionView.reloadData()
         }
-    }
-    
-    @IBAction func addIngredientButton(_ sender: Any) {
-        performSegue(withIdentifier: "addIngredientSegue", sender: self)
     }
     
     override func viewDidLoad() {
