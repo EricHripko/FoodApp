@@ -8,10 +8,12 @@
 
 import UIKit
 
-// A simple class to represent a Recipe
-class Recipe: CustomStringConvertible {
-    let id: String;
-    let name: String;
+/**
+ A simple class to represent a recipe.
+ */
+class Recipe : CustomStringConvertible, RecipeProtocol {
+    let id: String
+    let name: String
     var imageURL: String {
         get {
             return smallImageURL
