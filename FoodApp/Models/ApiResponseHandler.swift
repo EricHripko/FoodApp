@@ -15,25 +15,6 @@ class ApiResponseHandler {
     private let domain = "https://api.yummly.com/v1/api/"
     private let app_id = "d88aeda7"
     private let key = "c5805a87b146f8f9e529b1adab930d37"
-    let ingredients: [String]
-    var recipeId = ""
-    
-    /**
-    Initialiser used for getRecipes()
-     @param ingredients - array of ingredients
-    */
-    init(ingredients: [String]) {
-        self.ingredients = ingredients
-    }
-    
-    /**
-     Initialiser used for getRecipe()
-     @param recipeId - the ID of recipe to be queried
-     */
-    init(recipeId: String) {
-        self.recipeId = recipeId
-        self.ingredients = []
-    }
     
     /**
      @param ingredients - array of ingredients
