@@ -34,17 +34,24 @@ class FindRecipeViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
     }
     
-    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return selectedIngredients.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectedIngredientCell", for: indexPath) as! SelectedIngredientCollectionViewCell
         
         cell.ingredientLabel.text = selectedIngredients[indexPath.row]
+        cell.removeButton.layer.setValue(indexPath.row, forKey: "index")
+        cell.removeButton.addTarget(self, action:#selector(removeIngredient(sender:)), for: .touchUpInside)
         
         return cell
+    }
+    
+    @objc func removeIngredient(sender:UIButton) {
+        let i : Int = (sender.layer.value(forKey: "index")) as! Int
+        selectedIngredients.remove(at: i)
     }
 
 }

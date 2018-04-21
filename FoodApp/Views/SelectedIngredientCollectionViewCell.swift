@@ -10,7 +10,7 @@ import UIKit
 
 class SelectedIngredientCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ingredientLabel: UILabel!
-    
     @IBOutlet weak var removeButton: UIButton!
+    
     
 }
