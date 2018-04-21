@@ -8,16 +8,27 @@
 
 import UIKit
 
+/**
+ View controller for adding ingredients
+ */
 class AddIngredientViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
+    /**
+     Array that populates all ingredients pulled from ingredients.plist
+     */
     var ingredients = [String]()
+    
+    /**
+     Array that populates filtered ingredients according
+     to what user has typed into a searchbar
+     */
     var filteredIngredients = [String]()
     
-    var ingredientPassed : String?
+    /**
+     Boolean value to determine whether user is typing into the search bar
+     */
     var isSearching = false
     
     override func viewDidLoad() {
@@ -29,9 +40,9 @@ class AddIngredientViewController: UIViewController,UITableViewDelegate,UITableV
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
+        //Populate ingredients list from ingredients.plist file
         let path = Bundle.main.path(forResource: "ingredients", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path!)
-        
         ingredients = dict!.object(forKey: "ingredientsArray") as! [String]
         
         // Do any additional setup after loading the view.
@@ -59,7 +70,6 @@ class AddIngredientViewController: UIViewController,UITableViewDelegate,UITableV
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
             let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell") as! IngredientTableViewCell
-            
             let ingredient: String!
             
             if isSearching {
@@ -68,7 +78,6 @@ class AddIngredientViewController: UIViewController,UITableViewDelegate,UITableV
                 ingredient = ingredients[indexPath.row]
             }
         
-        //CHANGE TEXT OF button
             cell.ingredientButton.setTitle(ingredient,for: .normal)
             
             return cell;
@@ -84,10 +93,8 @@ class AddIngredientViewController: UIViewController,UITableViewDelegate,UITableV
             filteredIngredients = ingredients.filter({( ingredient : String) -> Bool in
                 return ingredient.lowercased().contains(searchText.lowercased())
             })
-            //filteredIngredients = ingredients.filter({$0.name == searchBar.text})
             tableView.reloadData()
         }
-        
     }
 
 
