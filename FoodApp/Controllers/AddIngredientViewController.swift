@@ -26,13 +26,14 @@ class AddIngredientViewController: UIViewController,UITableViewDelegate,UITableV
         tableView.delegate = self
         tableView.dataSource = self
     
-        
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
-        ingredients = [
-            "Onion", "Garlic", "Tomato", "Pasta",
-        ]
+        let path = Bundle.main.path(forResource: "ingredients", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
+        
+        ingredients = dict!.object(forKey: "ingredientsArray") as! [String]
+        
         // Do any additional setup after loading the view.
     }
     
