@@ -32,17 +32,28 @@ class ApiResponseHandler {
         // Async call to dataTask and populate ojects Array
         URLSession.shared.dataTask(with: urlObj) { (data, response, err) in
             guard let data = data else { return }
+            guard err == nil else { print("Error!"); return }
             
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 let map = json as? [String: Any]
-                let matches = map!["matches"] as? [Any]
-                for match in matches! {
-                    let each = match as? [String: Any]
-                    let imageArray = each!["smallImageUrls"] as? [String]
-                    let image = imageArray![0]
-                    let recipeObj = Recipe(id: each!["id"]! as! String, name: each!["recipeName"]! as! String, smallImageURL: image)
-                    recipeObjects.append(recipeObj)
+                let matches = map?["matches"] as? [Any]
+                if matches?.count != 0 {
+                    for match in matches! {
+                        let each = match as? [String: Any]
+                        let imageArray = each?["smallImageUrls"] as? [String]
+                        var image = ""
+                        if imageArray != nil && imageArray?.count != 0 {
+                            image = imageArray![0]
+                        }
+                        // ID and name forcibly unwrapped as its guaranteed for them to be present in API docs
+                        let recipeObj = Recipe(id: each!["id"]! as! String, name: each!["recipeName"]! as! String, smallImageURL: image)
+                        recipeObjects.append(recipeObj)
+                    }
+                }
+                else {
+                    print("No matches found for the searched ingredients!")
+                    return
                 }
             }
             catch let jsonErr {
@@ -57,13 +68,15 @@ class ApiResponseHandler {
      @param onCompletion - callback containing the DetailedRecipe object
      */
     func getRecipe(id: String, onCompletion: @escaping (DetailedRecipe) -> Void) {
-        // Create url string
+        // Create URL
         let url = "\(domain)recipe/\(id)?_app_id=\(app_id)&_app_key=\(key)"
-        
         guard let urlObj = URL(string: url) else { return }
+        
         // Async call to API
         URLSession.shared.dataTask(with: urlObj) { (data, response, err) in
+            // Ensure response exists, else return
             guard let data = data else { return }
+            guard err == nil else { print("Error!"); return }
             
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
@@ -80,6 +93,7 @@ class ApiResponseHandler {
             }
             catch let jsonErr {
                 print("Error parsing JSON", jsonErr)
+                return
             }
         }.resume()
     }
