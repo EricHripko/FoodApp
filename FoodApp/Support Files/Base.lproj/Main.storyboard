@@ -108,21 +108,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Jd-5K-tDa">
-                                <rect key="frame" x="0.0" y="96" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="62"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="FdP-LB-bTf"/>
+                                    <constraint firstAttribute="height" constant="62" id="FdP-LB-bTf"/>
                                     <constraint firstAttribute="width" constant="375" id="dla-f8-p3E"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="df4-ab-GrK">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="10" id="df4-ab-GrK">
+                                    <size key="itemSize" width="100" height="25"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ingredient" id="PVg-ct-VbT">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="selectedIngredientCell" id="PVg-ct-VbT" customClass="SelectedIngredientCollectionViewCell" customModule="FoodApp" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="0.0" width="100" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
@@ -137,7 +137,7 @@
                                                         <color key="titleColor" red="1" green="0.0" blue="0.092869963400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk7-QI-5KQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk7-QI-5KQ">
                                                     <rect key="frame" x="4" y="6" width="68" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="13" id="k21-NU-sQ0"/>
@@ -159,6 +159,10 @@
                                             <constraint firstItem="jk7-QI-5KQ" firstAttribute="top" secondItem="PVg-ct-VbT" secondAttribute="topMargin" constant="-2" id="pw5-XI-ksQ"/>
                                         </constraints>
                                         <size key="customSize" width="100" height="25"/>
+                                        <connections>
+                                            <outlet property="ingredientLabel" destination="jk7-QI-5KQ" id="oG8-O0-4v0"/>
+                                            <outlet property="removeButton" destination="hKy-1n-2LA" id="Nyw-3s-RvY"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -230,7 +234,7 @@
                             <constraint firstItem="PPI-5V-QmR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CCb-ef-EDu"/>
                             <constraint firstItem="PPI-5V-QmR" firstAttribute="top" secondItem="uCP-wJ-mhX" secondAttribute="bottom" constant="8.5" id="LQo-6Y-GCi"/>
                             <constraint firstItem="0vX-gZ-EKW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nhs-Xo-Jpa"/>
-                            <constraint firstItem="uCP-wJ-mhX" firstAttribute="top" secondItem="3Jd-5K-tDa" secondAttribute="bottom" constant="8" id="VXs-2h-C6J"/>
+                            <constraint firstItem="uCP-wJ-mhX" firstAttribute="top" secondItem="3Jd-5K-tDa" secondAttribute="bottom" constant="-4" id="VXs-2h-C6J"/>
                             <constraint firstItem="3Jd-5K-tDa" firstAttribute="top" secondItem="0vX-gZ-EKW" secondAttribute="bottom" constant="4" id="XNJ-Ol-qub"/>
                             <constraint firstItem="0vX-gZ-EKW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gi0-oO-Yb6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uCP-wJ-mhX" secondAttribute="trailing" id="hWN-hP-HXi"/>
@@ -243,13 +247,14 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="JIo-qF-dGy"/>
                     <navigationItem key="navigationItem" id="w7A-ca-rzl"/>
                     <connections>
+                        <outlet property="collectionView" destination="3Jd-5K-tDa" id="BqY-Wh-Ruw"/>
                         <segue destination="J6c-sp-Aia" kind="showDetail" identifier="addIngredientSegue" action="showViewController:sender:" id="dJk-rK-nWR"/>
                         <segue destination="ho2-NZ-PyX" kind="show" identifier="showRecipeSegue" id="hEu-DV-Q9X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286.95652173913044" y="283.69565217391306"/>
+            <point key="canvasLocation" x="285.60000000000002" y="282.90854572713647"/>
         </scene>
         <!--Recipe Name-->
         <scene sceneID="UN0-Bs-9eO">
