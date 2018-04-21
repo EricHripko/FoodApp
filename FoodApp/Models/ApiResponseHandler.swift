@@ -8,31 +8,42 @@
 
 import UIKit
 
+/**
+ Class used to query the API
+ */
 class ApiResponseHandler {
-    let domain: String
-    let endpoint: String
+    private let domain = "https://api.yummly.com/v1/api/"
     private let app_id = "d88aeda7"
     private let key = "c5805a87b146f8f9e529b1adab930d37"
-    let url: String
+    let ingredients: [String]
+    var recipeId = ""
     
-    init?(endpoint: String, ingredients: String) {
-        self.endpoint = endpoint
-        switch endpoint {
-        case "recipe":
-            domain = "https://api.yummly.com/v1/api/recipe/"
-            url = domain + "Crockpot-Cheesy-Chicken-_-Rice-2132197" + "?_app_id=" + app_id + "&_app_key=" + key
-            print(url)
-        case "recipes":
-            domain = "https://api.yummly.com/v1/api/recipes"
-            url = domain + "?_app_id=" + app_id + "&_app_key=" + key + "&q=" + ingredients
-            print(url)
-        default:
-            return nil
-        }
+    /**
+    Initialiser used for getRecipes()
+     @param ingredients - array of ingredients
+    */
+    init(ingredients: [String]) {
+        self.ingredients = ingredients
     }
     
-    // Gets all the recipes for the provided ingredients
-    func getRecipes(onCompletion: @escaping ([Recipe]) -> Void) {
+    /**
+     Initialiser used for getRecipe()
+     @param recipeId - the ID of recipe to be queried
+     */
+    init(recipeId: String) {
+        self.recipeId = recipeId
+        self.ingredients = []
+    }
+    
+    /**
+     @param ingredients - array of ingredients
+     @param onCompletion - callback with populated array of Recipe objects
+     */
+    func getRecipes(ingredients: [String], onCompletion: @escaping ([Recipe]) -> Void) {
+        // Create url string
+        let ingredientsString = ingredients.joined(separator: "+")
+        let url = "\(domain)recipes?_app_id=\(app_id)&_app_key=\(key)+&q=\(ingredientsString)"
+        
         // Initialise the array
         var recipeObjects = [Recipe]()
         guard let urlObj = URL(string: url) else { return }
@@ -60,8 +71,16 @@ class ApiResponseHandler {
         }.resume()
     }
     
-    func getRecipe(onCompletion: @escaping (DetailedRecipe) -> Void) {
+    /**
+     @param id - the ID for recipe to look for
+     @param onCompletion - callback containing the DetailedRecipe object
+     */
+    func getRecipe(id: String, onCompletion: @escaping (DetailedRecipe) -> Void) {
+        // Create url string
+        let url = "\(domain)recipe/\(id)?_app_id=\(app_id)&_app_key=\(key)"
+        
         guard let urlObj = URL(string: url) else { return }
+        // Async call to API
         URLSession.shared.dataTask(with: urlObj) { (data, response, err) in
             guard let data = data else { return }
             
@@ -69,13 +88,13 @@ class ApiResponseHandler {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 let map = json as? [String: Any]
                 let ingredients = map!["ingredientLines"] as? [String]
+                let name = map!["name"]
                 let cookTime = map!["cookTime"]
                 let prepTime = map!["prepTime"]
                 let numberOfServings = map!["numberOfServings"]
                 let imagesArray = map!["images"] as? [Any]
                 let images = imagesArray![0] as? [String: Any]
-                let recipe = DetailedRecipe(id: "Crockpot-Cheesy-Chicken-_-Rice-2132197", name: "Chicken & Rice", smallImageURL:
-                    "https://lh3.googleusercontent.com/Q8n3i7QbQZUqeSggcgEEocDh0_t4ymFsjNq6_LPbNCBDJn_Ppyq50Sg2lHzT8OuGul_qrEWjvddJK4K8XfWR=s90", bigImageURL: images!["hostedLargeUrl"]! as! String, ingredients: ingredients!, prepTime: prepTime as! String, cookTime: cookTime as! String, numberOfServings: numberOfServings as! Int  )
+                let recipe = DetailedRecipe(id, name as! String, images!["hostedLargeUrl"]! as! String, ingredients!, prepTime as! String, cookTime as! String, numberOfServings as! Int)
                 onCompletion(recipe)
             }
             catch let jsonErr {

@@ -9,21 +9,22 @@
 import UIKit
 
 // A simple class to represent a DetailedRecipe
-class DetailedRecipe: Recipe {
-    let bigImageURL: String;
+class DetailedRecipe {
+    let name : String
+    let imageURL: String;
     let ingredients: [String];
     let prepTime: String;
     let cookTime: String;
     let numberOfServings: Int;
     
     
-    init(id: String, name: String, smallImageURL: String, bigImageURL: String, ingredients: [String], prepTime: String, cookTime: String, numberOfServings: Int) {
-        self.bigImageURL = bigImageURL;
+    init(_ id: String, _ name: String, _ imageURL: String, _ ingredients: [String], _ prepTime: String, _ cookTime: String, _ numberOfServings: Int) {
+        self.name = name
+        self.imageURL = imageURL;
         self.ingredients = ingredients;
         self.prepTime = prepTime;
         self.cookTime = cookTime;
         self.numberOfServings = numberOfServings;
-        super.init(id: id, name: name, smallImageURL: smallImageURL);
     }
 }
 
