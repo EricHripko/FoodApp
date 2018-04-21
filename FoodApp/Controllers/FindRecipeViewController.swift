@@ -8,11 +8,13 @@
 
 import UIKit
 
-class FindRecipeViewController: UIViewController {
+class FindRecipeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     var selectedIngredients: [String] = [] {
         didSet{
-            print(selectedIngredients)
+            collectionView.reloadData()
         }
     }
     
@@ -20,20 +22,30 @@ class FindRecipeViewController: UIViewController {
         performSegue(withIdentifier: "addIngredientSegue", sender: self)
     }
     
-//    var ingredientRecieved: String? {
-//        willSet{
-//            selectedIngredients.append(newValue!)
-//            print(selectedIngredients)
-//        }
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.navigationItem.title = "Search"
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     // segue AddIngredientViewController -> FindRrecipeViewController
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
     }
+    
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        return selectedIngredients.count
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectedIngredientCell", for: indexPath) as! SelectedIngredientCollectionViewCell
+        
+        cell.ingredientLabel.text = selectedIngredients[indexPath.row]
+        
+        return cell
+    }
+
 }
 
