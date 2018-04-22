@@ -6,7 +6,6 @@
 //  Copyright © 2018 Armadillo. All rights reserved.
 //
 
-import Foundation
 import XCTest
 @testable import FoodApp
 

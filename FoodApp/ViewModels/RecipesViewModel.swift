@@ -91,6 +91,10 @@ class RecipesViewModel : NSObject, UITableViewDataSource {
                 DispatchQueue.global().async {
                     let data = try? Data(contentsOf: url)
                     DispatchQueue.main.async {
+                        guard data != nil else {
+                            return
+                        }
+                        
                         let image = UIImage(data: data!)
                         self._imageCache[recipe.imageURL] = image
                         // Set the image and recalculate layout
