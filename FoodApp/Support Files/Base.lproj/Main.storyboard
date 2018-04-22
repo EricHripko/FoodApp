@@ -267,8 +267,9 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiD-n6-HiJ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lOk-mp-iru">
+                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lOk-mp-iru">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="2C2-GC-h5E"/>
                                             <constraint firstAttribute="width" secondItem="lOk-mp-iru" secondAttribute="height" multiplier="16:9" id="geS-Bd-4Iy"/>
@@ -322,7 +323,7 @@
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ph1-ql-n2Y">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ph1-ql-n2Y">
                                         <rect key="frame" x="0.0" y="513.5" width="375" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -475,20 +476,30 @@
                                     </mask>
                                 </variation>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZjR-Rt-xuM">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FiD-n6-HiJ" firstAttribute="leading" secondItem="kFJ-sq-Of6" secondAttribute="leading" id="SDJ-tO-cxR"/>
+                            <constraint firstItem="ZjR-Rt-xuM" firstAttribute="centerX" secondItem="uqm-Wh-zll" secondAttribute="centerX" id="VJ2-24-pos"/>
                             <constraint firstItem="kFJ-sq-Of6" firstAttribute="bottom" secondItem="FiD-n6-HiJ" secondAttribute="bottom" id="bvy-BV-6cU"/>
                             <constraint firstItem="lpp-NT-zut" firstAttribute="width" secondItem="kFJ-sq-Of6" secondAttribute="width" id="cRi-SL-XtT"/>
+                            <constraint firstItem="ZjR-Rt-xuM" firstAttribute="centerY" secondItem="uqm-Wh-zll" secondAttribute="centerY" id="ean-kU-wEQ"/>
                             <constraint firstItem="kFJ-sq-Of6" firstAttribute="trailing" secondItem="FiD-n6-HiJ" secondAttribute="trailing" id="gbq-pE-Zzu"/>
                             <constraint firstItem="FiD-n6-HiJ" firstAttribute="top" secondItem="kFJ-sq-Of6" secondAttribute="top" id="ijf-dl-TU2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kFJ-sq-Of6"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="ZjR-Rt-xuM" id="egX-1J-drs"/>
+                        <outlet property="cookTextView" destination="45f-h9-4va" id="IXB-hL-MwC"/>
+                        <outlet property="imageView" destination="lOk-mp-iru" id="MUb-42-gQp"/>
                         <outlet property="ingridientsView" destination="Ph1-ql-n2Y" id="W6H-0z-t3i"/>
                         <outlet property="ingridientsViewHeightConstraint" destination="C1d-em-N3Y" id="hrZ-9T-6gY"/>
+                        <outlet property="prepTextView" destination="a07-wi-7vK" id="zif-E9-74I"/>
+                        <outlet property="servesTextView" destination="MjL-yE-iM0" id="Fh6-Yj-ouR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckn-SO-a4r" userLabel="First Responder" sceneMemberID="firstResponder"/>

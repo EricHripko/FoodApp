@@ -16,6 +16,11 @@ struct ServiceProvider {
      */
     static let savedRecipeService: SavedRecipeServiceProtocol = SavedRecipeService()
     
+    /**
+     Service for interacting with Recipes API.
+     */
+    static let apiService: ApiResponseHandler = ApiResponseHandler()
+    
     // This is a static struct and it should not be initialised
     private init() {
     }
