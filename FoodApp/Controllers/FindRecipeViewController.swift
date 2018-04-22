@@ -10,6 +10,10 @@ import UIKit
 
 class FindRecipeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    private var viewModel: RecipesViewModel!
+    
     
     @IBAction func addIngredientButton(_ sender: Any) {
         performSegue(withIdentifier: "addIngredientSegue", sender: self)
@@ -34,6 +38,17 @@ class FindRecipeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     // segue AddIngredientViewController -> FindRrecipeViewController
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
+        ServiceProvider.apiService.getRecipes(ingredients: selectedIngredients) {
+            recipes in DispatchQueue.main.async {
+                self.dataBind(recipes)
+            }
+        }
+    }
+    
+    func dataBind(_ recipes: [Recipe]) {
+        viewModel = RecipesViewModel(with: recipes, noData: "Couldn't load data")
+        tableView.dataSource = viewModel
+        tableView.setNeedsLayout()
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
