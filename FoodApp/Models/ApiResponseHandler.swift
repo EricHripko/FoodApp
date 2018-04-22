@@ -81,14 +81,23 @@ class ApiResponseHandler {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 let map = json as? [String: Any]
-                let ingredients = map!["ingredientLines"] as? [String]
-                let name = map!["name"]
-                let cookTime = map!["cookTime"]
-                let prepTime = map!["prepTime"]
-                let numberOfServings = map!["numberOfServings"]
-                let imagesArray = map!["images"] as? [Any]
+                
+                // Force unwrap those two as they are guaranteed in the API response
+                let ingredients = map?["ingredientLines"] as! [String]
+                let name = map?["name"] as! String
+                
+                // Get the other properties as Optionals
+                let cookTime = map?["cookTime"] as? String
+                let prepTime = map?["prepTime"] as? String
+                let numberOfServings = map?["numberOfServings"] as? Int
+                let imagesArray = map?["images"] as? [Any]
                 let images = imagesArray![0] as? [String: Any]
-                let recipe = DetailedRecipe(id, name as! String, images!["hostedLargeUrl"]! as! String, ingredients!, prepTime as! String, cookTime as! String, numberOfServings as! Int)
+                let image = images?["hostedLargeUrl"] as? String
+                let sourceMap = map?["source"] as? [String: String]
+                let sourceURL = sourceMap?["sourceRecipeUrl"]
+                
+                // Initialise recipe
+                let recipe = DetailedRecipe(name, image, ingredients, prepTime, cookTime, numberOfServings, sourceURL)
                 onCompletion(recipe)
             }
             catch let jsonErr {
