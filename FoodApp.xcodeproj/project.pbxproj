@@ -137,6 +137,7 @@
 		074EBDA52087349000C75495 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9850E6C0208A491400E455BD /* ApiResponseHandler.swift */,
 				074EBDA6208734B400C75495 /* SavedRecipeService.swift */,
 				074EBDA8208734CD00C75495 /* SavedRecipeServiceProtocol.swift */,
 				0722C019208A501D004C48C7 /* ServiceProvider.swift */,
@@ -149,7 +150,6 @@
 			children = (
 				07E0799420893B5300C11761 /* DetailedRecipe.swift */,
 				07E0799220893B5300C11761 /* Recipe.swift */,
-				9850E6C0208A491400E455BD /* ApiResponseHandler.swift */,
 				07E0799320893B5300C11761 /* SavedRecipe.swift */,
 				074E7CDF208A9F2A00F7282F /* RecipeProtocol.swift */,
 			);
