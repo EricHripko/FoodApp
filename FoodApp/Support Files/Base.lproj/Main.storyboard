@@ -476,16 +476,17 @@
                                     </mask>
                                 </variation>
                             </scrollView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZjR-Rt-xuM">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZjR-Rt-xuM">
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FiD-n6-HiJ" firstAttribute="leading" secondItem="kFJ-sq-Of6" secondAttribute="leading" id="SDJ-tO-cxR"/>
+                            <constraint firstItem="ZjR-Rt-xuM" firstAttribute="centerX" secondItem="uqm-Wh-zll" secondAttribute="centerX" id="VJ2-24-pos"/>
                             <constraint firstItem="kFJ-sq-Of6" firstAttribute="bottom" secondItem="FiD-n6-HiJ" secondAttribute="bottom" id="bvy-BV-6cU"/>
                             <constraint firstItem="lpp-NT-zut" firstAttribute="width" secondItem="kFJ-sq-Of6" secondAttribute="width" id="cRi-SL-XtT"/>
+                            <constraint firstItem="ZjR-Rt-xuM" firstAttribute="centerY" secondItem="uqm-Wh-zll" secondAttribute="centerY" id="ean-kU-wEQ"/>
                             <constraint firstItem="kFJ-sq-Of6" firstAttribute="trailing" secondItem="FiD-n6-HiJ" secondAttribute="trailing" id="gbq-pE-Zzu"/>
                             <constraint firstItem="FiD-n6-HiJ" firstAttribute="top" secondItem="kFJ-sq-Of6" secondAttribute="top" id="ijf-dl-TU2"/>
                         </constraints>

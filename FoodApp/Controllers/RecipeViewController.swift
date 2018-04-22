@@ -46,6 +46,11 @@ class RecipeViewController: UIViewController {
     private var imageURL: String?
     
     /**
+     URL for the recipe instructions.
+     */
+    private var sourceURL: String?
+    
+    /**
      Get or set the name of the recipe displayed by this control.
      */
     private var name: String? {
@@ -86,8 +91,9 @@ class RecipeViewController: UIViewController {
      */
     func dataBind(with recipe: DetailedRecipe) {
         // Download and display the image
+        image = nil
         imageURL = recipe.imageURL
-        if let url = URL(string: recipe.imageURL) {
+        if recipe.imageURL != nil, let url = URL(string: recipe.imageURL!) {
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)
                 DispatchQueue.main.async {
@@ -104,9 +110,10 @@ class RecipeViewController: UIViewController {
         
         // Display the rest
         name = recipe.name
-        prepTextView.text = recipe.prepTime
-        cookTextView.text = recipe.cookTime
-        servesTextView.text = "\(recipe.numberOfServings) adults"
+        sourceURL = recipe.sourceURL
+        prepTextView.text = recipe.prepTime ?? "No info"
+        cookTextView.text = recipe.cookTime ?? "No info"
+        servesTextView.text = recipe.numberOfServings != nil ? "\(recipe.numberOfServings!) adults" : "No info"
     }
     
 
@@ -166,8 +173,13 @@ class RecipeViewController: UIViewController {
     }
     
     @IBAction func instructionsButtonTapped() {
-        //TODO Real model
-        let url = URL(string: "https://leeds.ac.uk")!
+        guard sourceURL != nil else {
+            return
+        }
+        guard let url = URL(string: sourceURL!) else {
+            return
+        }
+        
         UIApplication.shared.open(url, options: [:])
     }
 }
