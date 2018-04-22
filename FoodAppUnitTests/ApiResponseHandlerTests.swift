@@ -10,9 +10,25 @@ import Foundation
 import XCTest
 @testable import FoodApp
 
-class ApiResponseHandler: XCTestCase {
+class ApiResponseHandlerTests: XCTestCase {
     func testInitSuccess() {
         let api = ApiResponseHandler()
         XCTAssertNotNil(api)
-    }    
+    }
+    
+    func testGetRecipesRealData() {
+        let api = ApiResponseHandler()
+        api.getRecipes(ingredients: ["Onion", "Chicken", "Rice"]) { (recipes) in
+            XCTAssertEqual(recipes.count, 10)
+        }
+    }
+    
+    func testGetRecipesEmptyData() {
+        let api = ApiResponseHandler()
+        // Provide nonsense data
+        api.getRecipes(ingredients: ["sdadadasdasd"]) { (recipes) in
+            XCTAssertEqual(recipes.count, 1231)
+        }
+        
+    }
 }

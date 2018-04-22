@@ -248,6 +248,7 @@
                     <navigationItem key="navigationItem" id="w7A-ca-rzl"/>
                     <connections>
                         <outlet property="collectionView" destination="3Jd-5K-tDa" id="BqY-Wh-Ruw"/>
+                        <outlet property="tableView" destination="PPI-5V-QmR" id="maU-SD-KoS"/>
                         <segue destination="J6c-sp-Aia" kind="showDetail" identifier="addIngredientSegue" action="showViewController:sender:" id="dJk-rK-nWR"/>
                         <segue destination="ho2-NZ-PyX" kind="show" identifier="showRecipeSegue" id="hEu-DV-Q9X"/>
                     </connections>
