@@ -97,6 +97,9 @@ class RecipeViewController: UIViewController {
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)
                 DispatchQueue.main.async {
+                    guard data != nil else {
+                        return
+                    }
                     let image = UIImage(data: data!)
                     self.image = image
                 }
