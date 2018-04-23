@@ -70,6 +70,16 @@ class FindRecipeViewController: UIViewController, UICollectionViewDelegate, UICo
         let i : Int = (sender.layer.value(forKey: "index")) as! Int
         selectedIngredients.remove(at: i)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showRecipeSegue" {
+            return
+        }
+        
+        let destination = segue.destination as? RecipeViewController
+        let recipeId = viewModel.selectedRecipe(for: tableView)
+        destination?.recipeId = recipeId?.id
+    }
 
 }
 
