@@ -25,6 +25,11 @@ class FindRecipeViewController: UIViewController, UICollectionViewDelegate, UICo
     var selectedIngredients: [String] = [] {
         didSet{
             collectionView.reloadData()
+            ServiceProvider.apiService.getRecipes(ingredients: selectedIngredients) {
+                recipes in DispatchQueue.main.async {
+                    self.dataBind(recipes)
+                }
+            }
         }
     }
     
@@ -38,11 +43,6 @@ class FindRecipeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     // segue AddIngredientViewController -> FindRrecipeViewController
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
-        ServiceProvider.apiService.getRecipes(ingredients: selectedIngredients) {
-            recipes in DispatchQueue.main.async {
-                self.dataBind(recipes)
-            }
-        }
     }
     
     func dataBind(_ recipes: [Recipe]) {
