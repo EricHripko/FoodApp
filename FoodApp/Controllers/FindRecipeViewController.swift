@@ -64,6 +64,7 @@ class FindRecipeViewController: UIViewController, UICollectionViewDelegate, UICo
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectedIngredientCell", for: indexPath) as! SelectedIngredientCollectionViewCell
         
+        cell.layer.cornerRadius = 8
         cell.ingredientLabel.text = selectedIngredients[indexPath.row]
         cell.removeButton.layer.setValue(indexPath.row, forKey: "index")
         cell.removeButton.addTarget(self, action:#selector(removeIngredient(sender:)), for: .touchUpInside)
